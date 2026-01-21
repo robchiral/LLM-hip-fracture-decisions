@@ -1,0 +1,4 @@
+outcome,chi_square_statistic,degrees_of_freedom,p_value
+Nerve block,24823.033828227744,4,0
+Anesthesia type,15207.541707894068,4,0
+Arterial line,2639.759369633296,4,0

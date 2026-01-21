@@ -1,0 +1,17 @@
+"model_name","sex","ga_technique","n","total","percentage"
+"deepseek","male","sevoflurane",1186,1186,100
+"deepseek","female","sevoflurane",967,967,100
+"gemini-2.5-flash-preview-09-2025","male","sevoflurane",1281,1281,100
+"gemini-2.5-flash-preview-09-2025","female","sevoflurane",1295,1295,100
+"gpt-5-2025-08-07","male","TIVA",3,713,0.4
+"gpt-5-2025-08-07","male","sevoflurane",710,713,99.6
+"gpt-5-2025-08-07","female","TIVA",1,705,0.1
+"gpt-5-2025-08-07","female","sevoflurane",704,705,99.9
+"gpt-5-mini-2025-08-07","male","TIVA",39,881,4.4
+"gpt-5-mini-2025-08-07","male","sevoflurane",842,881,95.6
+"gpt-5-mini-2025-08-07","female","TIVA",37,885,4.2
+"gpt-5-mini-2025-08-07","female","sevoflurane",848,885,95.8
+"gpt-5-nano-2025-08-07","male","TIVA",492,622,79.1
+"gpt-5-nano-2025-08-07","male","sevoflurane",130,622,20.9
+"gpt-5-nano-2025-08-07","female","TIVA",473,613,77.2
+"gpt-5-nano-2025-08-07","female","sevoflurane",140,613,22.8

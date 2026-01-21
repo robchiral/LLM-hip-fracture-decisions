@@ -1,0 +1,16 @@
+model,outcome,filename,type
+gpt-5-2025-08-07,nerve_block_binary,gpt-5-2025-08-07_nerve_block_binary_binary_bayesian_glm.rds,bayesian
+gpt-5-2025-08-07,anesthetic_plan_binary,gpt-5-2025-08-07_anesthetic_plan_binary_binary_bayesian_glm.rds,bayesian
+gpt-5-2025-08-07,arterial_line_binary,gpt-5-2025-08-07_arterial_line_binary_binary_bayesian_glm.rds,bayesian
+gpt-5-mini-2025-08-07,nerve_block_binary,gpt-5-mini-2025-08-07_nerve_block_binary_binary_bayesian_glm.rds,bayesian
+gpt-5-mini-2025-08-07,anesthetic_plan_binary,gpt-5-mini-2025-08-07_anesthetic_plan_binary_binary_bayesian_glm.rds,bayesian
+gpt-5-mini-2025-08-07,arterial_line_binary,gpt-5-mini-2025-08-07_arterial_line_binary_binary_bayesian_glm.rds,bayesian
+gpt-5-nano-2025-08-07,nerve_block_binary,gpt-5-nano-2025-08-07_nerve_block_binary_binary_bayesian_glm.rds,bayesian
+gpt-5-nano-2025-08-07,anesthetic_plan_binary,gpt-5-nano-2025-08-07_anesthetic_plan_binary_binary_bayesian_glm.rds,bayesian
+gpt-5-nano-2025-08-07,arterial_line_binary,gpt-5-nano-2025-08-07_arterial_line_binary_binary_bayesian_glm.rds,bayesian
+gemini-2.5-flash-preview-09-2025,nerve_block_binary,gemini-2.5-flash-preview-09-2025_nerve_block_binary_binary_bayesian_glm.rds,bayesian
+gemini-2.5-flash-preview-09-2025,anesthetic_plan_binary,gemini-2.5-flash-preview-09-2025_anesthetic_plan_binary_binary_bayesian_glm.rds,bayesian
+gemini-2.5-flash-preview-09-2025,arterial_line_binary,gemini-2.5-flash-preview-09-2025_arterial_line_binary_binary_bayesian_glm.rds,bayesian
+deepseek,nerve_block_binary,deepseek_nerve_block_binary_binary_bayesian_glm.rds,bayesian
+deepseek,anesthetic_plan_binary,deepseek_anesthetic_plan_binary_binary_bayesian_glm.rds,bayesian
+deepseek,arterial_line_binary,deepseek_arterial_line_binary_binary_bayesian_glm.rds,bayesian

@@ -1,0 +1,6 @@
+"model_name","Model","Control_GA_pct","Preference_GA_pct","Difference"
+"deepseek","DeepSeek 3.2",17.1666666666667,100,82.8333333333333
+"gpt-5-2025-08-07","GPT-5",0,100,100
+"gpt-5-mini-2025-08-07","GPT-5 mini",1.16666666666667,100,98.8333333333333
+"gpt-5-nano-2025-08-07","GPT-5 nano",0.333333333333333,99.8333333333333,99.5
+"gemini-2.5-flash-preview-09-2025","Gemini 2.5 Flash",6,100,94

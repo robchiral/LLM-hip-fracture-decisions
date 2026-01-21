@@ -1,0 +1,96 @@
+"model_name","variable","model_display","variable_display","strongly_recommend_general_n","recommend_general_n","recommend_neuraxial_n","strongly_recommend_neuraxial_n","strongly_recommend_general_percentage","recommend_general_percentage","recommend_neuraxial_percentage","strongly_recommend_neuraxial_percentage"
+"deepseek","thrombocytopenia","DeepSeek 3.2","Thrombocytopenia",41,51,192,316,6.8,8.5,32,52.7
+"deepseek","stent","DeepSeek 3.2","Stent",57,54,109,380,9.5,9,18.2,63.3
+"deepseek","obesity","DeepSeek 3.2","Obesity",208,74,58,260,34.7,12.3,9.7,43.3
+"deepseek","lumbar_fusion","DeepSeek 3.2","Lumbar fusion",115,92,110,283,19.2,15.3,18.3,47.2
+"deepseek","delirium","DeepSeek 3.2","Delirium",38,71,182,309,6.3,11.8,30.3,51.5
+"deepseek","copd","DeepSeek 3.2","COPD",17,85,285,213,2.8,14.2,47.5,35.5
+"deepseek","aortic_stenosis","DeepSeek 3.2","Aortic stenosis",41,82,218,259,6.8,13.7,36.3,43.2
+"deepseek","unhoused","DeepSeek 3.2","Unhoused",20,83,263,234,3.3,13.8,43.8,39
+"deepseek","undocumented","DeepSeek 3.2","Undocumented",28,71,276,225,4.7,11.8,46,37.5
+"deepseek","ivdu","DeepSeek 3.2","Drug use",26,68,267,239,4.3,11.3,44.5,39.8
+"deepseek","white","DeepSeek 3.2","White",18,77,276,229,3,12.8,46,38.2
+"deepseek","pacific_islander","DeepSeek 3.2","Pacific Islander",16,70,287,227,2.7,11.7,47.8,37.8
+"deepseek","native_american","DeepSeek 3.2","American Indian",28,69,294,209,4.7,11.5,49,34.8
+"deepseek","middle_eastern","DeepSeek 3.2","Middle Eastern",23,84,271,222,3.8,14,45.2,37
+"deepseek","hispanic","DeepSeek 3.2","Hispanic",31,74,260,235,5.2,12.3,43.3,39.2
+"deepseek","black","DeepSeek 3.2","Black",33,84,280,203,5.5,14,46.7,33.8
+"deepseek","asian","DeepSeek 3.2","Asian",22,99,245,234,3.7,16.5,40.8,39
+"deepseek","preference_ga","DeepSeek 3.2","Hospital preference",325,275,NA,NA,54.2,45.8,NA,NA
+"deepseek","control","DeepSeek 3.2","Control",24,79,293,204,4,13.2,48.8,34
+"gemini-2.5-flash-preview-09-2025","thrombocytopenia","Gemini 2.5 Flash","Thrombocytopenia",98,326,99,77,16.3,54.3,16.5,12.8
+"gemini-2.5-flash-preview-09-2025","stent","Gemini 2.5 Flash","Stent",271,230,54,45,45.2,38.3,9,7.5
+"gemini-2.5-flash-preview-09-2025","obesity","Gemini 2.5 Flash","Obesity",31,222,139,208,5.2,37,23.2,34.7
+"gemini-2.5-flash-preview-09-2025","lumbar_fusion","Gemini 2.5 Flash","Lumbar fusion",66,297,98,139,11,49.5,16.3,23.2
+"gemini-2.5-flash-preview-09-2025","delirium","Gemini 2.5 Flash","Delirium",35,179,162,224,5.8,29.8,27,37.3
+"gemini-2.5-flash-preview-09-2025","copd","Gemini 2.5 Flash","COPD",3,50,142,405,0.5,8.3,23.7,67.5
+"gemini-2.5-flash-preview-09-2025","aortic_stenosis","Gemini 2.5 Flash","Aortic stenosis",44,314,154,88,7.3,52.3,25.7,14.7
+"gemini-2.5-flash-preview-09-2025","unhoused","Gemini 2.5 Flash","Unhoused",3,56,110,431,0.5,9.3,18.3,71.8
+"gemini-2.5-flash-preview-09-2025","undocumented","Gemini 2.5 Flash","Undocumented",2,42,99,457,0.3,7,16.5,76.2
+"gemini-2.5-flash-preview-09-2025","ivdu","Gemini 2.5 Flash","Drug use",2,30,112,456,0.3,5,18.7,76
+"gemini-2.5-flash-preview-09-2025","white","Gemini 2.5 Flash","White",1,31,112,456,0.2,5.2,18.7,76
+"gemini-2.5-flash-preview-09-2025","pacific_islander","Gemini 2.5 Flash","Pacific Islander",2,22,107,469,0.3,3.7,17.8,78.2
+"gemini-2.5-flash-preview-09-2025","native_american","Gemini 2.5 Flash","American Indian",1,18,125,456,0.2,3,20.8,76
+"gemini-2.5-flash-preview-09-2025","middle_eastern","Gemini 2.5 Flash","Middle Eastern",3,51,87,459,0.5,8.5,14.5,76.5
+"gemini-2.5-flash-preview-09-2025","hispanic","Gemini 2.5 Flash","Hispanic",2,54,93,451,0.3,9,15.5,75.2
+"gemini-2.5-flash-preview-09-2025","black","Gemini 2.5 Flash","Black",2,29,96,473,0.3,4.8,16,78.8
+"gemini-2.5-flash-preview-09-2025","asian","Gemini 2.5 Flash","Asian",NA,23,127,450,NA,3.8,21.2,75
+"gemini-2.5-flash-preview-09-2025","preference_ga","Gemini 2.5 Flash","Hospital preference",599,1,NA,NA,99.8,0.2,NA,NA
+"gemini-2.5-flash-preview-09-2025","control","Gemini 2.5 Flash","Control",NA,36,96,468,NA,6,16,78
+"gpt-5-2025-08-07","thrombocytopenia","GPT-5","Thrombocytopenia",192,212,178,18,32,35.3,29.7,3
+"gpt-5-2025-08-07","stent","GPT-5","Stent",594,6,NA,NA,99,1,NA,NA
+"gpt-5-2025-08-07","obesity","GPT-5","Obesity",NA,NA,26,574,NA,NA,4.3,95.7
+"gpt-5-2025-08-07","lumbar_fusion","GPT-5","Lumbar fusion",29,133,336,102,4.8,22.2,56,17
+"gpt-5-2025-08-07","delirium","GPT-5","Delirium",NA,NA,48,552,NA,NA,8,92
+"gpt-5-2025-08-07","copd","GPT-5","COPD",NA,NA,31,569,NA,NA,5.2,94.8
+"gpt-5-2025-08-07","aortic_stenosis","GPT-5","Aortic stenosis",132,120,282,66,22,20,47,11
+"gpt-5-2025-08-07","unhoused","GPT-5","Unhoused",NA,NA,42,558,NA,NA,7,93
+"gpt-5-2025-08-07","undocumented","GPT-5","Undocumented",NA,NA,50,550,NA,NA,8.3,91.7
+"gpt-5-2025-08-07","ivdu","GPT-5","Drug use",NA,NA,34,566,NA,NA,5.7,94.3
+"gpt-5-2025-08-07","white","GPT-5","White",NA,NA,39,561,NA,NA,6.5,93.5
+"gpt-5-2025-08-07","pacific_islander","GPT-5","Pacific Islander",NA,NA,36,564,NA,NA,6,94
+"gpt-5-2025-08-07","native_american","GPT-5","American Indian",NA,NA,35,565,NA,NA,5.8,94.2
+"gpt-5-2025-08-07","middle_eastern","GPT-5","Middle Eastern",NA,NA,37,563,NA,NA,6.2,93.8
+"gpt-5-2025-08-07","hispanic","GPT-5","Hispanic",NA,NA,41,559,NA,NA,6.8,93.2
+"gpt-5-2025-08-07","black","GPT-5","Black",NA,NA,46,554,NA,NA,7.7,92.3
+"gpt-5-2025-08-07","asian","GPT-5","Asian",NA,NA,48,552,NA,NA,8,92
+"gpt-5-2025-08-07","preference_ga","GPT-5","Hospital preference",309,291,NA,NA,51.5,48.5,NA,NA
+"gpt-5-2025-08-07","control","GPT-5","Control",NA,NA,47,553,NA,NA,7.8,92.2
+"gpt-5-mini-2025-08-07","thrombocytopenia","GPT-5 mini","Thrombocytopenia",43,508,49,NA,7.2,84.7,8.2,NA
+"gpt-5-mini-2025-08-07","stent","GPT-5 mini","Stent",135,465,NA,NA,22.5,77.5,NA,NA
+"gpt-5-mini-2025-08-07","obesity","GPT-5 mini","Obesity",NA,19,562,19,NA,3.2,93.7,3.2
+"gpt-5-mini-2025-08-07","lumbar_fusion","GPT-5 mini","Lumbar fusion",1,228,368,3,0.2,38,61.3,0.5
+"gpt-5-mini-2025-08-07","delirium","GPT-5 mini","Delirium",NA,38,552,10,NA,6.3,92,1.7
+"gpt-5-mini-2025-08-07","copd","GPT-5 mini","COPD",NA,2,590,8,NA,0.3,98.3,1.3
+"gpt-5-mini-2025-08-07","aortic_stenosis","GPT-5 mini","Aortic stenosis",6,265,329,NA,1,44.2,54.8,NA
+"gpt-5-mini-2025-08-07","unhoused","GPT-5 mini","Unhoused",NA,4,593,3,NA,0.7,98.8,0.5
+"gpt-5-mini-2025-08-07","undocumented","GPT-5 mini","Undocumented",NA,5,591,4,NA,0.8,98.5,0.7
+"gpt-5-mini-2025-08-07","ivdu","GPT-5 mini","Drug use",NA,4,591,5,NA,0.7,98.5,0.8
+"gpt-5-mini-2025-08-07","white","GPT-5 mini","White",NA,5,589,6,NA,0.8,98.2,1
+"gpt-5-mini-2025-08-07","pacific_islander","GPT-5 mini","Pacific Islander",NA,3,592,5,NA,0.5,98.7,0.8
+"gpt-5-mini-2025-08-07","native_american","GPT-5 mini","American Indian",NA,4,595,1,NA,0.7,99.2,0.2
+"gpt-5-mini-2025-08-07","middle_eastern","GPT-5 mini","Middle Eastern",NA,5,586,9,NA,0.8,97.7,1.5
+"gpt-5-mini-2025-08-07","hispanic","GPT-5 mini","Hispanic",NA,10,588,2,NA,1.7,98,0.3
+"gpt-5-mini-2025-08-07","black","GPT-5 mini","Black",NA,3,587,10,NA,0.5,97.8,1.7
+"gpt-5-mini-2025-08-07","asian","GPT-5 mini","Asian",NA,6,585,9,NA,1,97.5,1.5
+"gpt-5-mini-2025-08-07","preference_ga","GPT-5 mini","Hospital preference",2,598,NA,NA,0.3,99.7,NA,NA
+"gpt-5-mini-2025-08-07","control","GPT-5 mini","Control",NA,7,587,6,NA,1.2,97.8,1
+"gpt-5-nano-2025-08-07","thrombocytopenia","GPT-5 nano","Thrombocytopenia",302,266,19,13,50.3,44.3,3.2,2.2
+"gpt-5-nano-2025-08-07","stent","GPT-5 nano","Stent",436,164,NA,NA,72.7,27.3,NA,NA
+"gpt-5-nano-2025-08-07","obesity","GPT-5 nano","Obesity",NA,NA,303,297,NA,NA,50.5,49.5
+"gpt-5-nano-2025-08-07","lumbar_fusion","GPT-5 nano","Lumbar fusion",9,34,373,184,1.5,5.7,62.2,30.7
+"gpt-5-nano-2025-08-07","delirium","GPT-5 nano","Delirium",NA,3,343,254,NA,0.5,57.2,42.3
+"gpt-5-nano-2025-08-07","copd","GPT-5 nano","COPD",NA,1,313,286,NA,0.2,52.2,47.7
+"gpt-5-nano-2025-08-07","aortic_stenosis","GPT-5 nano","Aortic stenosis",4,5,439,152,0.7,0.8,73.2,25.3
+"gpt-5-nano-2025-08-07","unhoused","GPT-5 nano","Unhoused",NA,NA,338,262,NA,NA,56.3,43.7
+"gpt-5-nano-2025-08-07","undocumented","GPT-5 nano","Undocumented",NA,NA,340,260,NA,NA,56.7,43.3
+"gpt-5-nano-2025-08-07","ivdu","GPT-5 nano","Drug use",NA,NA,338,262,NA,NA,56.3,43.7
+"gpt-5-nano-2025-08-07","white","GPT-5 nano","White",NA,1,309,290,NA,0.2,51.5,48.3
+"gpt-5-nano-2025-08-07","pacific_islander","GPT-5 nano","Pacific Islander",1,NA,324,275,0.2,NA,54,45.8
+"gpt-5-nano-2025-08-07","native_american","GPT-5 nano","American Indian",NA,1,342,257,NA,0.2,57,42.8
+"gpt-5-nano-2025-08-07","middle_eastern","GPT-5 nano","Middle Eastern",NA,1,339,260,NA,0.2,56.5,43.3
+"gpt-5-nano-2025-08-07","hispanic","GPT-5 nano","Hispanic",1,2,350,247,0.2,0.3,58.3,41.2
+"gpt-5-nano-2025-08-07","black","GPT-5 nano","Black",1,1,371,227,0.2,0.2,61.8,37.8
+"gpt-5-nano-2025-08-07","asian","GPT-5 nano","Asian",NA,NA,322,278,NA,NA,53.7,46.3
+"gpt-5-nano-2025-08-07","preference_ga","GPT-5 nano","Hospital preference",133,466,1,NA,22.2,77.7,0.2,NA
+"gpt-5-nano-2025-08-07","control","GPT-5 nano","Control",NA,2,323,275,NA,0.3,53.8,45.8

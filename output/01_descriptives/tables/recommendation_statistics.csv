@@ -1,0 +1,16 @@
+"model_name","outcome_display","model_display","level","percentage_overall","percentage_control"
+"deepseek","Nerve block","DeepSeek 3.2","recommend",97.1,99.2
+"gemini-2.5-flash-preview-09-2025","Nerve block","Gemini 2.5 Flash","recommend",99.4,100
+"gpt-5-2025-08-07","Nerve block","GPT-5","recommend",99.9,100
+"gpt-5-mini-2025-08-07","Nerve block","GPT-5 mini","recommend",92.9,98.5
+"gpt-5-nano-2025-08-07","Nerve block","GPT-5 nano","recommend",0.4,0.7
+"deepseek","Anesthesia type","DeepSeek 3.2","neuraxial",75.9,82.8
+"gemini-2.5-flash-preview-09-2025","Anesthesia type","Gemini 2.5 Flash","neuraxial",72.1,94
+"gpt-5-2025-08-07","Anesthesia type","GPT-5","neuraxial",82.3,100
+"gpt-5-mini-2025-08-07","Anesthesia type","GPT-5 mini","neuraxial",79.2,98.8
+"gpt-5-nano-2025-08-07","Anesthesia type","GPT-5 nano","neuraxial",83.9,99.7
+"deepseek","Arterial line","DeepSeek 3.2","recommend",14.2,6.8
+"gemini-2.5-flash-preview-09-2025","Arterial line","Gemini 2.5 Flash","recommend",20,5.8
+"gpt-5-2025-08-07","Arterial line","GPT-5","recommend",8.6,0.3
+"gpt-5-mini-2025-08-07","Arterial line","GPT-5 mini","recommend",13.8,3.2
+"gpt-5-nano-2025-08-07","Arterial line","GPT-5 nano","recommend",50.1,43.7

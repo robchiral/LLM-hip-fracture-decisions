@@ -1,0 +1,65 @@
+effect_type,comparison_label,outcome,model,RD,rd_p,rd_p_fdr,ci_entirely_meaningful
+Surgery,Long cephalomedullary,Arterial line,DeepSeek 3.2,54.65 (51.51-57.79),4.939010720963132e-255,2.4695053604815662e-254,TRUE
+Surgery,Total hip,Arterial line,GPT-5,16.65 (13.34-19.97),7.459791198254063e-23,3.729895599127032e-22,TRUE
+Surgery,Long cephalomedullary,Arterial line,GPT-5 mini,31.06 (27.68-34.43),1.5301483632676624e-72,7.650741816338312e-72,TRUE
+Surgery,Total hip,Arterial line,GPT-5 mini,10.95 (8.83-13.06),3.603258290958499e-24,9.008145727396247e-24,TRUE
+Surgery,Hemiarthroplasty,Arterial line,GPT-5 mini,7.97 (6.22-9.73),6.298330272314573e-19,1.049721712052429e-18,TRUE
+Surgery,Long cephalomedullary,Arterial line,GPT-5 nano,25.10 (21.88-28.33),1.5950518682239108e-52,7.975259341119554e-52,TRUE
+Surgery,Total hip,Arterial line,GPT-5 nano,24.24 (21.01-27.48),9.072196701103033e-49,2.2680491752757582e-48,TRUE
+Surgery,Percutaneous screws,Arterial line,GPT-5 nano,-17.32 (-20.62--14.03),6.411260518840134e-25,1.068543419806689e-24,TRUE
+Surgery,Long cephalomedullary,Arterial line,Gemini 2.5 Flash,29.74 (26.76-32.73),7.390196911639584e-85,3.6950984558197924e-84,TRUE
+Surgery,Hemiarthroplasty,Arterial line,Gemini 2.5 Flash,26.72 (23.81-29.64),2.9150060491743467e-72,7.287515122935867e-72,TRUE
+Surgery,Total hip,Arterial line,Gemini 2.5 Flash,25.48 (22.61-28.35),8.718641392648882e-68,1.4531068987748137e-67,TRUE
+Surgery,Total hip,Nerve block,GPT-5 mini,-6.72 (-8.09--5.36),6.018163969465615e-22,3.009081984732807e-21,TRUE
+Surgery,Long cephalomedullary,Neuraxial anesthesia,DeepSeek 3.2,-39.23 (-42.33--36.13),1.0116525707793304e-135,5.058262853896652e-135,TRUE
+Surgery,Total hip,Neuraxial anesthesia,DeepSeek 3.2,25.89 (23.73-28.06),1.2671398751007545e-121,3.167849687751886e-121,TRUE
+Surgery,Hemiarthroplasty,Neuraxial anesthesia,DeepSeek 3.2,24.15 (21.91-26.38),1.2540203847931257e-99,2.0900339746552096e-99,TRUE
+Surgery,Percutaneous screws,Neuraxial anesthesia,DeepSeek 3.2,17.70 (15.21-20.20),5.865808044500087e-44,7.332260055625109e-44,TRUE
+Surgery,Sliding hip screw,Neuraxial anesthesia,DeepSeek 3.2,16.43 (13.88-18.97),1.0207315270829384e-36,1.0207315270829384e-36,TRUE
+Surgery,Long cephalomedullary,Neuraxial anesthesia,GPT-5 mini,-17.44 (-21.86--13.02),1.0068181864629407e-14,5.0340909323147035e-14,TRUE
+Surgery,Long cephalomedullary,Neuraxial anesthesia,Gemini 2.5 Flash,-39.45 (-42.81--36.09),2.8842468736693657e-117,1.4421234368346828e-116,TRUE
+Surgery,Percutaneous screws,Neuraxial anesthesia,Gemini 2.5 Flash,-5.80 (-7.79--3.80),1.2914737639631164e-8,3.228684409907791e-8,FALSE
+Surgery,Hemiarthroplasty,Neuraxial anesthesia,Gemini 2.5 Flash,-5.29 (-7.25--3.34),1.1342733811672988e-7,1.8904556352788315e-7,FALSE
+Variable,Aortic stenosis,Arterial line,DeepSeek 3.2,78.85 (75.43-82.26),0,0,TRUE
+Variable,Stent,Arterial line,DeepSeek 3.2,65.35 (60.87-69.84),1.133988227582586e-179,7.937917593078102e-179,TRUE
+Variable,Obesity,Arterial line,DeepSeek 3.2,50.40 (45.29-55.52),4.1208375045534275e-83,1.966763354445954e-82,TRUE
+Variable,Aortic stenosis,Arterial line,GPT-5,99.92 (99.83-100.01),0,0,TRUE
+Variable,Stent,Arterial line,GPT-5,16.40 (7.81-24.99),1.83423930674001e-4,4.3771619819932056e-4,TRUE
+Variable,Aortic stenosis,Arterial line,GPT-5 mini,99.04 (98.63-99.46),0,0,TRUE
+Variable,Stent,Arterial line,GPT-5 mini,64.66 (58.72-70.60),5.785572228211701e-101,3.374917133123492e-100,TRUE
+Variable,Thrombocytopenia,Arterial line,GPT-5 mini,11.51 (8.56-14.46),2.1631190134485782e-14,6.680220482708845e-14,TRUE
+Variable,Obesity,Arterial line,GPT-5 mini,7.93 (5.69-10.18),4.112533135046e-12,1.2337599405138e-11,TRUE
+Variable,Aortic stenosis,Arterial line,GPT-5 nano,48.02 (43.33-52.71),1.0907079485868297e-89,5.7262167300808556e-89,TRUE
+Variable,Stent,Arterial line,GPT-5 nano,39.85 (34.74-44.96),1.0366096482178508e-52,4.186308194725936e-52,TRUE
+Variable,Obesity,Arterial line,GPT-5 nano,23.81 (18.12-29.50),2.3275647454637353e-16,7.637321821052881e-16,TRUE
+Variable,Thrombocytopenia,Arterial line,GPT-5 nano,14.69 (8.89-20.49),6.850969290594311e-7,1.7545165256400065e-6,TRUE
+Variable,Drug use,Arterial line,GPT-5 nano,-12.44 (-18.07--6.81),1.469372320634717e-5,0.0022040584809520755,TRUE
+Variable,Lumbar fusion,Arterial line,GPT-5 nano,6.96 (1.06-12.86),0.020786468790714854,0.04279567103970705,FALSE
+Variable,Aortic stenosis,Arterial line,Gemini 2.5 Flash,93.89 (92.39-95.39),0,0,TRUE
+Variable,Stent,Arterial line,Gemini 2.5 Flash,79.25 (75.58-82.92),0,0,TRUE
+Variable,Obesity,Arterial line,Gemini 2.5 Flash,46.14 (40.66-51.62),3.6910341085160026e-61,1.550234325576721e-60,TRUE
+Variable,Lumbar fusion,Arterial line,Gemini 2.5 Flash,8.06 (5.74-10.38),1.0322964649082293e-11,3.010864689315669e-11,TRUE
+Variable,Thrombocytopenia,Nerve block,DeepSeek 3.2,-24.71 (-28.33--21.08),1.1818665148136491e-40,4.003096259852683e-40,TRUE
+Variable,Stent,Nerve block,DeepSeek 3.2,-7.49 (-9.73--5.26),4.726374742180721e-11,1.3412685079161506e-10,TRUE
+Variable,Stent,Nerve block,GPT-5 mini,-63.46 (-67.53--59.39),4.299347212675951e-205,3.224510409506963e-204,TRUE
+Variable,Thrombocytopenia,Nerve block,GPT-5 mini,-26.01 (-29.75--22.28),1.9675240553552976e-42,6.886334193743542e-42,TRUE
+Variable,Thrombocytopenia,Nerve block,Gemini 2.5 Flash,-5.51 (-7.33--3.70),2.6527332247772994e-9,7.141974066708114e-9,FALSE
+Variable,Obesity,Neuraxial anesthesia,DeepSeek 3.2,-37.99 (-43.44--32.55),1.4245547864098196e-42,5.157870778380381e-42,TRUE
+Variable,Lumbar fusion,Neuraxial anesthesia,DeepSeek 3.2,-19.13 (-23.83--14.43),1.4727411433143442e-15,4.685994546909277e-15,TRUE
+Variable,Stent,Neuraxial anesthesia,GPT-5,-99.93 (-100.12--99.74),0,0,TRUE
+Variable,Thrombocytopenia,Neuraxial anesthesia,GPT-5,-67.23 (-71.03--63.44),8.79199337258367e-264,7.101225416317578e-263,TRUE
+Variable,Aortic stenosis,Neuraxial anesthesia,GPT-5,-41.71 (-45.72--37.70),1.6260790683966836e-92,8.986226430613252e-92,TRUE
+Variable,Lumbar fusion,Neuraxial anesthesia,GPT-5,-26.41 (-29.97--22.85),7.1136990195446e-48,2.766438507600678e-47,TRUE
+Variable,Stent,Neuraxial anesthesia,GPT-5 mini,-99.36 (-99.83--98.89),0,0,TRUE
+Variable,Thrombocytopenia,Neuraxial anesthesia,GPT-5 mini,-92.80 (-94.66--90.94),0,0,TRUE
+Variable,Aortic stenosis,Neuraxial anesthesia,GPT-5 mini,-45.97 (-50.46--41.49),1.1873451084387606e-89,5.936725542193803e-89,TRUE
+Variable,Lumbar fusion,Neuraxial anesthesia,GPT-5 mini,-37.33 (-41.72--32.93),2.855671454139038e-62,1.3036760986286912e-61,TRUE
+Variable,Stent,Neuraxial anesthesia,GPT-5 nano,-99.63 (-100.08--99.17),0,0,TRUE
+Variable,Thrombocytopenia,Neuraxial anesthesia,GPT-5 nano,-94.24 (-96.07--92.41),0,0,TRUE
+Variable,Lumbar fusion,Neuraxial anesthesia,GPT-5 nano,-6.29 (-8.32--4.26),1.241673883216785e-9,3.4309409930990113e-9,FALSE
+Variable,Stent,Neuraxial anesthesia,Gemini 2.5 Flash,-81.92 (-84.95--78.89),0,0,TRUE
+Variable,Thrombocytopenia,Neuraxial anesthesia,Gemini 2.5 Flash,-68.77 (-72.64--64.91),2.1974296544766685e-266,1.922750947667085e-265,TRUE
+Variable,Lumbar fusion,Neuraxial anesthesia,Gemini 2.5 Flash,-58.96 (-63.27--54.66),5.170153360188097e-159,3.3929131426234388e-158,TRUE
+Variable,Aortic stenosis,Neuraxial anesthesia,Gemini 2.5 Flash,-58.06 (-62.39--53.73),2.6778826134378667e-152,1.653986320064565e-151,TRUE
+Variable,Obesity,Neuraxial anesthesia,Gemini 2.5 Flash,-38.16 (-42.68--33.64),1.5015654005483845e-61,6.569348627399182e-61,TRUE
+Variable,Delirium,Neuraxial anesthesia,Gemini 2.5 Flash,-30.53 (-34.90--26.17),7.767791415197707e-43,2.91292178069914e-42,TRUE

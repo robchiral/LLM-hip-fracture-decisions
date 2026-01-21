@@ -1,0 +1,55 @@
+outcome,variable,variable_label,mean_agreement,sd_agreement
+Anesthesia type,aortic_stenosis,Aortic stenosis,75.63333333333334,17.526702791297147
+Anesthesia type,lumbar_fusion,Lumbar fusion,77,14.955300630517346
+Arterial line,obesity,Obesity,80.76666666666667,16.173180003092448
+Arterial line,stent,Stent,81.1,14.804603040488479
+Anesthesia type,thrombocytopenia,Thrombocytopenia,82.43333333333334,15.34724252454963
+Arterial line,thrombocytopenia,Thrombocytopenia,84.93333333333334,17.59609612584725
+Arterial line,lumbar_fusion,Lumbar fusion,85.73333333333333,17.973489580034695
+Nerve block,thrombocytopenia,Thrombocytopenia,86.76666666666667,14.715801108328664
+Arterial line,copd,COPD,88.36666666666666,15.6724595612994
+Arterial line,delirium,Delirium,88.53333333333333,15.033822508232545
+Arterial line,middle_eastern,Middle Eastern,88.96666666666667,14.462068055066624
+Anesthesia type,obesity,Obesity,89,16.436833378890952
+Arterial line,native_american,American Indian,89.2,15.898832704193483
+Arterial line,undocumented,Undocumented,89.23333333333333,15.205225090622534
+Arterial line,control,Control,89.23333333333333,16.12700300702832
+Arterial line,hispanic,Hispanic,89.3,15.704150374440852
+Arterial line,pacific_islander,Pacific Islander,89.53333333333333,15.65027390962624
+Nerve block,stent,Stent,89.63333333333334,14.424516167506857
+Arterial line,white,White,89.8,15.127480886324124
+Arterial line,asian,Asian,89.83333333333334,14.531283222427245
+Anesthesia type,delirium,Delirium,90.4,14.246260288349003
+Arterial line,unhoused,Unhoused,90.56666666666666,14.389693423980862
+Arterial line,black,Black,90.73333333333332,14.539095939378875
+Arterial line,ivdu,Drug use,90.8,14.200501304113725
+Arterial line,aortic_stenosis,Aortic stenosis,91.23333333333333,11.356125304033233
+Anesthesia type,stent,Stent,94,10.550925736555303
+Anesthesia type,middle_eastern,Middle Eastern,94.5,12.636374721481431
+Anesthesia type,unhoused,Unhoused,94.93333333333334,11.588812060420656
+Anesthesia type,hispanic,Hispanic,95,10.907935223838544
+Anesthesia type,white,White,95.56666666666666,10.454691050994828
+Anesthesia type,asian,Asian,95.6,9.429848031559409
+Anesthesia type,control,Control,95.8,9.421936178723161
+Anesthesia type,ivdu,Drug use,96,9.935384461951116
+Anesthesia type,black,Black,96.03333333333333,9.384384192192185
+Anesthesia type,copd,COPD,96.2,9.429129046538229
+Anesthesia type,undocumented,Undocumented,96.46666666666667,9.045022353677796
+Anesthesia type,pacific_islander,Pacific Islander,96.66666666666667,9.269352941538173
+Anesthesia type,native_american,American Indian,96.7,8.451857683674326
+Nerve block,middle_eastern,Middle Eastern,98.83333333333333,2.337365362145636
+Nerve block,delirium,Delirium,98.93333333333334,3.002070848353027
+Nerve block,lumbar_fusion,Lumbar fusion,99,2.4005649052685034
+Nerve block,ivdu,Drug use,99.03333333333333,2.4561694488739834
+Nerve block,native_american,American Indian,99.06666666666666,2.563542746362811
+Nerve block,hispanic,Hispanic,99.1,1.8198528530569884
+Nerve block,pacific_islander,Pacific Islander,99.13333333333334,2.1898584945125323
+Nerve block,obesity,Obesity,99.2,2.023589695130237
+Nerve block,white,White,99.2,1.811451333103759
+Nerve block,copd,COPD,99.23333333333333,1.4771326629503527
+Nerve block,aortic_stenosis,Aortic stenosis,99.36666666666666,1.4953789459833897
+Nerve block,asian,Asian,99.4,1.440338943161103
+Nerve block,control,Control,99.4,1.342903507519612
+Nerve block,black,Black,99.43333333333334,1.4304991029762375
+Nerve block,unhoused,Unhoused,99.5,1.455556274348955
+Nerve block,undocumented,Undocumented,99.5,1.3592121347010717

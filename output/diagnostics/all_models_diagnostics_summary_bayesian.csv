@@ -1,0 +1,16 @@
+"Model_Type","Model","Outcome","Event_Level","N","Converged","Convergence_code","Iterations","Boundary_fit","Overdispersion_ratio","Overdispersion_p","DHARMa_uniformity_p","DHARMa_dispersion_p","DHARMa_outliers_p"
+"bayesglm (MAP)","deepseek","nerve_block_binary","recommend",10800,TRUE,0,11,FALSE,1.01082351183156,0.792,0.488332226486099,0.764,0.745611388963243
+"bayesglm (MAP)","deepseek","anesthetic_plan_binary","neuraxial",10800,TRUE,0,8,FALSE,1.01461822517244,0.376,0.476612670502711,0.482,0.279646570204811
+"bayesglm (MAP)","deepseek","arterial_line_binary","recommend",10800,TRUE,0,8,FALSE,1.00358903824732,0.84,0.355201691116771,0.886,0.449122205656427
+"bayesglm (MAP)","gpt-5-2025-08-07","nerve_block_binary","recommend",10800,TRUE,0,28,FALSE,0.988305813881374,0.944,0.441592112633178,0.912,0.387643588541673
+"bayesglm (MAP)","gpt-5-2025-08-07","anesthetic_plan_binary","neuraxial",10800,TRUE,0,18,FALSE,0.991746532456739,0.664,0.312820568403767,0.586,0.666362923774213
+"bayesglm (MAP)","gpt-5-2025-08-07","arterial_line_binary","recommend",10800,TRUE,0,14,FALSE,0.976108608775507,0.696,0.330830682431712,0.766,0.588713510346515
+"bayesglm (MAP)","gpt-5-mini-2025-08-07","nerve_block_binary","recommend",10800,TRUE,0,9,FALSE,1.02264245930172,0.496,0.656118400398125,0.486,0.449122205656427
+"bayesglm (MAP)","gpt-5-mini-2025-08-07","anesthetic_plan_binary","neuraxial",10800,TRUE,0,18,FALSE,1.01296392159058,0.632,0.347385190056813,0.722,0.666362923774213
+"bayesglm (MAP)","gpt-5-mini-2025-08-07","arterial_line_binary","recommend",10800,TRUE,0,9,FALSE,1.0077995223295,0.744,0.396857418747637,0.912,0.279646570204811
+"bayesglm (MAP)","gpt-5-nano-2025-08-07","nerve_block_binary","recommend",10800,TRUE,0,21,FALSE,0.994731702140722,0.912,0.378835899945865,0.984,0.913881647928035
+"bayesglm (MAP)","gpt-5-nano-2025-08-07","anesthetic_plan_binary","neuraxial",10800,TRUE,0,19,FALSE,0.938632077064547,0.552,0.553659183675918,0.536,0.666362923774213
+"bayesglm (MAP)","gpt-5-nano-2025-08-07","arterial_line_binary","recommend",10800,TRUE,0,5,FALSE,0.998906179780386,0.888,0.291485437596888,0.876,0.387643588541673
+"bayesglm (MAP)","gemini-2.5-flash-preview-09-2025","nerve_block_binary","recommend",10800,TRUE,0,23,FALSE,0.991580889780756,0.928,0.46856505045096,0.908,0.279646570204811
+"bayesglm (MAP)","gemini-2.5-flash-preview-09-2025","anesthetic_plan_binary","neuraxial",10800,TRUE,0,7,FALSE,1.01260914424596,0.44,0.397095694998819,0.464,0.913881647928035
+"bayesglm (MAP)","gemini-2.5-flash-preview-09-2025","arterial_line_binary","recommend",10800,TRUE,0,8,FALSE,1.0101586850376,0.64,0.503402154752166,0.596,1
