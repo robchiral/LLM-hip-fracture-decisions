@@ -4,6 +4,9 @@
 
 # 1. SETUP 
 
+# Set working directory
+setwd("/Users/robertchen/Documents/GitHub/LLM_hip/analysis")
+
 # Load required packages
 library(lme4)          # Mixed effects models
 library(emmeans)       # Estimated marginal means and contrasts
@@ -11,6 +14,8 @@ library(tidyverse)     # Data manipulation and plotting
 library(data.table)    # Efficient data handling
 library(kableExtra)    # Table formatting
 library(patchwork)     # Combining plots
+
+figure_dpi <- 600
 
 format_label <- function(x) {
   label <- str_replace_all(x, "_", " ")
@@ -655,7 +660,7 @@ p_final <- plot_grid(
 )
 
 # Save the combined figure
-output_file <- "./output/04_combined/figures/combined_three_panel_figure.png"
+output_file <- "./output/04_combined/figures/combined_three_panel_figure.jpg"
 cat("  Saving combined figure\n")
 
 ggsave(
@@ -663,7 +668,7 @@ ggsave(
   p_final,
   width = 20,
   height = 18,
-  dpi = 300,
+  dpi = figure_dpi,
   bg = "white"
 )
 

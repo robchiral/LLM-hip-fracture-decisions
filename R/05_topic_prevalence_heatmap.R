@@ -3,9 +3,14 @@
 
 # 1. SETUP 
 
+# Set working directory
+setwd("/Users/robertchen/Documents/GitHub/LLM_hip/analysis")
+
 # Load required packages
 library(tidyverse)     # Data manipulation and plotting
 library(scales)        # For percent formatting
+
+figure_dpi <- 600
 
 # Label formatting functions (matching existing scripts)
 format_label <- function(x) {
@@ -144,9 +149,9 @@ p <- ggplot(plot_data, aes(x = model_display, y = topic_display, fill = prevalen
 
 # 5. SAVE OUTPUT 
 
-output_file <- "./output/05_topic_prevalence/keyword_prevalence_heatmap.png"
+output_file <- "./output/05_topic_prevalence/keyword_prevalence_heatmap.jpg"
 
 cat("Saving heatmap\n")
-ggsave(output_file, p, width = 10, height = 8, dpi = 300)
+ggsave(output_file, p, width = 10, height = 8, dpi = figure_dpi, bg = "white")
 
 cat("  Saved to:", output_file, "\n")

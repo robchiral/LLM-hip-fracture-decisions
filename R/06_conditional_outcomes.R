@@ -1,6 +1,9 @@
 # SCRIPT 6: Conditional Outcomes Analysis
 # Purpose: Analyze outcomes conditional on primary choices
 
+# Set working directory
+setwd("/Users/robertchen/Documents/GitHub/LLM_hip/analysis")
+
 # Load required packages
 library(tidyverse)
 library(broom)
@@ -8,6 +11,8 @@ library(knitr)
 library(kableExtra)
 library(ggplot2)
 library(patchwork)
+
+figure_dpi <- 600
 
 # Label formatting functions
 format_label <- function(x) {
@@ -537,11 +542,11 @@ combined_plot <- (plots[["ga_airway"]] + plots[["ga_technique"]]) /
   theme(legend.position = "bottom")
 
 # Save combined plot
-ggsave("./output/06_conditional/figures/conditional_distributions.png",
+ggsave("./output/06_conditional/figures/conditional_distributions.jpg",
        combined_plot,
-       width = 14, height = 10, dpi = 300)
+       width = 14, height = 10, dpi = figure_dpi, bg = "white")
 
-cat("\nPlot saved to ./output/06_conditional/figures/conditional_distributions.png\n")
+cat("\nPlot saved to ./output/06_conditional/figures/conditional_distributions.jpg\n")
 
 # 6. DETAILED CROSSTABS (for reference)
 
@@ -626,7 +631,7 @@ cat("    - [outcome]_by_variable.csv (x4)\n")
 cat("    - [outcome]_by_surgery.csv (x4)\n")
 cat("    - [outcome]_by_sex.csv (x4)\n")
 cat("  Figures:\n")
-cat("    - conditional_distributions.png\n\n")
+cat("    - conditional_distributions.jpg\n\n")
 
 cat("=== Session Information ===\n")
 sessionInfo()

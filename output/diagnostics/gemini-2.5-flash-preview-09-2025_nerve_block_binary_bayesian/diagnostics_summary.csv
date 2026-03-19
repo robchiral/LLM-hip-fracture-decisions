@@ -1,0 +1,2 @@
+"Model_Type","Model","Outcome","Event_Level","N","Converged","Convergence_code","Iterations","Boundary_fit","Overdispersion_ratio","Overdispersion_p","DHARMa_uniformity_p","DHARMa_dispersion_p","DHARMa_outliers_p"
+"bayesglm (MAP)","gemini-2.5-flash-preview-09-2025","nerve_block_binary","recommend",10800,TRUE,0,23,FALSE,0.991580889780756,0.928,0.46856505045096,0.908,0.279646570204811

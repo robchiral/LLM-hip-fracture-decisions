@@ -1,0 +1,180 @@
+
+=======================================================================
+Fitting model for: gpt-5-nano-2025-08-07 - nerve_block_binary 
+Event level: recommend 
+Output directory: output/diagnostics/gpt-5-nano-2025-08-07_nerve_block_binary_bayesian 
+=======================================================================
+
+Sample size: 10800 
+
+Outcome distribution:
+
+  against recommend 
+    10756        44 
+
+Outcome proportions:
+
+  against recommend 
+    0.996     0.004 
+
+--- Fitting penalized logistic regression (bayesglm) ---
+Formula: nerve_block_binary ~ variable + surgery_id + sex 
+Prior: Cauchy (Student's t, df=1) - Gelman et al. 2008
+  Intercept: scale=10, df=1
+  Coefficients: scale=2.5, df=1
+
+Model fitting completed.
+
+=======================================================================
+CONVERGENCE DIAGNOSTICS
+=======================================================================
+
+Converged: TRUE 
+Convergence code: 0 (0 = converged)
+Iterations used: 21 
+
+--- Model Summary ---
+
+Call:
+bayesglm(formula = formula_binary, family = binomial(link = "logit"), 
+    data = model_data, prior.scale = 2.5, prior.df = 1, prior.scale.for.intercept = 10, 
+    prior.df.for.intercept = 1, maxit = 100)
+
+Coefficients:
+                                  Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                      -5.408273   0.509559 -10.614  < 2e-16 ***
+variablestent                    -0.546339   0.902138  -0.606  0.54478    
+variableobesity                   0.656117   0.626221   1.048  0.29476    
+variablelumbar_fusion             0.656117   0.626221   1.048  0.29476    
+variabledelirium                  0.377169   0.674544   0.559  0.57606    
+variablecopd                      0.656117   0.626221   1.048  0.29476    
+variableaortic_stenosis          -1.836947   1.456448  -1.261  0.20722    
+variableunhoused                 -1.836947   1.456448  -1.261  0.20722    
+variableundocumented              0.007141   0.752125   0.009  0.99242    
+variableivdu                     -0.546339   0.902138  -0.606  0.54478    
+variablewhite                     0.007141   0.752125   0.009  0.99242    
+variablepacific_islander         -0.546339   0.902138  -0.606  0.54478    
+variablenative_american           0.007141   0.752125   0.009  0.99242    
+variablemiddle_eastern            1.484589   0.524341   2.831  0.00464 ** 
+variablehispanic                  0.007141   0.752125   0.009  0.99242    
+variableblack                    -0.546339   0.902138  -0.606  0.54478    
+variableasian                     0.007141   0.752125   0.009  0.99242    
+variablecontrol                   0.656117   0.626221   1.048  0.29476    
+surgery_idhemiarthroplasty        0.148987   0.420939   0.354  0.72338    
+surgery_idlong_cephalomedullary  -0.161149   0.454160  -0.355  0.72272    
+surgery_idshort_cephalomedullary -1.062160   0.601929  -1.765  0.07763 .  
+surgery_idsliding_hip_screw      -0.161149   0.454160  -0.355  0.72272    
+surgery_idpercutaneous_screws    -0.807675   0.551227  -1.465  0.14286    
+sexfemale                        -0.088893   0.298336  -0.298  0.76573    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 572.09  on 10799  degrees of freedom
+Residual deviance: 537.13  on 10776  degrees of freedom
+AIC: 585.13
+
+Number of Fisher Scoring iterations: 21
+
+
+=======================================================================
+OVERDISPERSION DIAGNOSTICS
+=======================================================================
+
+# Overdispersion test
+
+ dispersion ratio = 0.995
+          p-value = 0.912
+
+
+=======================================================================
+DHARMa RESIDUAL DIAGNOSTICS
+=======================================================================
+
+Generating simulated datasets for DHARMa...
+Using event level: recommend for outcome: nerve_block_binary 
+
+Creating DHARMa object from numeric simulations...
+
+--- Uniformity Test ---
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  simulationOutput$scaledResiduals
+D = 0.0087582, p-value = 0.3788
+alternative hypothesis: two-sided
+
+
+--- Dispersion Test ---
+
+	DHARMa nonparametric dispersion test via sd of residuals fitted vs.
+	simulated
+
+data:  simulationOutput
+dispersion = 1.0057, p-value = 0.984
+alternative hypothesis: two.sided
+
+
+--- Outlier Test ---
+
+	DHARMa outlier test based on exact binomial test with approximate
+	expectations
+
+data:  sim_resid
+outliers at both margin(s) = 22, observations = 10800, p-value = 0.9139
+alternative hypothesis: true probability of success is not equal to 0.001998002
+95 percent confidence interval:
+ 0.001277027 0.003082484
+sample estimates:
+frequency of outliers (expected: 0.001998001998002 ) 
+                                         0.002037037 
+
+
+=======================================================================
+VARIANCE INFLATION FACTORS (VIF)
+=======================================================================
+
+               GVIF Df GVIF^(1/(2*Df))
+variable   1.000006 17        1.000000
+surgery_id 1.000006  5        1.000001
+sex        1.000000  1        1.000000
+
+Interpretation:
+  - For numeric predictors: VIF > 10 suggests multicollinearity
+  - For factors: Examine GVIF^(1/(2*Df)) (rightmost column)
+    Values > 2-3 suggest multicollinearity
+
+=======================================================================
+PLUG-IN PREDICTIVE CHECK
+=======================================================================
+
+Performing plug-in predictive check (event rate)...
+Saved: output/diagnostics/gpt-5-nano-2025-08-07_nerve_block_binary_bayesian/predictive_check.png 
+
+=======================================================================
+GENERATING DIAGNOSTIC PLOTS
+=======================================================================
+Saved: output/diagnostics/gpt-5-nano-2025-08-07_nerve_block_binary_bayesian/dharma_diagnostics.png 
+
+=======================================================================
+CREATING DIAGNOSTIC SUMMARY TABLE
+=======================================================================
+      Model_Type                 Model            Outcome Event_Level     N
+1 bayesglm (MAP) gpt-5-nano-2025-08-07 nerve_block_binary   recommend 10800
+  Converged Convergence_code Iterations Boundary_fit Overdispersion_ratio
+1      TRUE                0         21        FALSE            0.9947317
+  Overdispersion_p DHARMa_uniformity_p DHARMa_dispersion_p DHARMa_outliers_p
+1            0.912           0.3788359               0.984         0.9138816
+
+Saved: output/diagnostics/gpt-5-nano-2025-08-07_nerve_block_binary_bayesian/diagnostics_summary.csv 
+
+=======================================================================
+SAVING MODEL AND RESULTS
+=======================================================================
+Saved model: models/gpt-5-nano-2025-08-07_nerve_block_binary_binary_bayesian_glm.rds 
+Saved results: output/diagnostics/gpt-5-nano-2025-08-07_nerve_block_binary_bayesian/model_results.rds 
+
+=======================================================================
+ITERATION COMPLETE: gpt-5-nano-2025-08-07 - nerve_block_binary 
+=======================================================================

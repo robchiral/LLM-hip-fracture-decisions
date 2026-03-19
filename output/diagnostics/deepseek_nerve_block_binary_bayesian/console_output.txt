@@ -1,0 +1,180 @@
+
+=======================================================================
+Fitting model for: deepseek - nerve_block_binary 
+Event level: recommend 
+Output directory: output/diagnostics/deepseek_nerve_block_binary_bayesian 
+=======================================================================
+
+Sample size: 10800 
+
+Outcome distribution:
+
+  against recommend 
+      327     10473 
+
+Outcome proportions:
+
+  against recommend 
+     0.03      0.97 
+
+--- Fitting penalized logistic regression (bayesglm) ---
+Formula: nerve_block_binary ~ variable + surgery_id + sex 
+Prior: Cauchy (Student's t, df=1) - Gelman et al. 2008
+  Intercept: scale=10, df=1
+  Coefficients: scale=2.5, df=1
+
+Model fitting completed.
+
+=======================================================================
+CONVERGENCE DIAGNOSTICS
+=======================================================================
+
+Converged: TRUE 
+Convergence code: 0 (0 = converged)
+Iterations used: 11 
+
+--- Model Summary ---
+
+Call:
+bayesglm(formula = formula_binary, family = binomial(link = "logit"), 
+    data = model_data, prior.scale = 2.5, prior.df = 1, prior.scale.for.intercept = 10, 
+    prior.df.for.intercept = 1, maxit = 100)
+
+Coefficients:
+                                 Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                       1.25878    0.18722   6.724 1.77e-11 ***
+variablestent                     1.33496    0.17062   7.824 5.11e-15 ***
+variableobesity                   4.64814    0.65339   7.114 1.13e-12 ***
+variablelumbar_fusion             3.04122    0.31332   9.706  < 2e-16 ***
+variabledelirium                  3.80793    0.44077   8.639  < 2e-16 ***
+variablecopd                      3.35494    0.35918   9.340  < 2e-16 ***
+variableaortic_stenosis           2.80009    0.28316   9.889  < 2e-16 ***
+variableunhoused                  4.28455    0.55023   7.787 6.87e-15 ***
+variableundocumented              3.80793    0.44077   8.639  < 2e-16 ***
+variableivdu                      3.48489    0.38061   9.156  < 2e-16 ***
+variablewhite                     3.48489    0.38061   9.156  < 2e-16 ***
+variablepacific_islander          3.35494    0.35918   9.340  < 2e-16 ***
+variablenative_american           4.64814    0.65339   7.114 1.13e-12 ***
+variablemiddle_eastern            3.35494    0.35918   9.340  < 2e-16 ***
+variablehispanic                  3.04122    0.31332   9.706  < 2e-16 ***
+variableblack                     3.80793    0.44077   8.639  < 2e-16 ***
+variableasian                     4.64814    0.65339   7.114 1.13e-12 ***
+variablecontrol                   3.80793    0.44077   8.639  < 2e-16 ***
+surgery_idhemiarthroplasty        0.76464    0.28067   2.724  0.00644 ** 
+surgery_idlong_cephalomedullary  -0.14974    0.22802  -0.657  0.51136    
+surgery_idshort_cephalomedullary -0.19917    0.22609  -0.881  0.37835    
+surgery_idsliding_hip_screw      -0.54227    0.21467  -2.526  0.01153 *  
+surgery_idpercutaneous_screws    -1.22687    0.19987  -6.138 8.34e-10 ***
+sexfemale                         0.08209    0.12222   0.672  0.50177    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 2931.3  on 10799  degrees of freedom
+Residual deviance: 2097.6  on 10776  degrees of freedom
+AIC: 2145.6
+
+Number of Fisher Scoring iterations: 11
+
+
+=======================================================================
+OVERDISPERSION DIAGNOSTICS
+=======================================================================
+
+# Overdispersion test
+
+ dispersion ratio = 1.011
+          p-value = 0.792
+
+
+=======================================================================
+DHARMa RESIDUAL DIAGNOSTICS
+=======================================================================
+
+Generating simulated datasets for DHARMa...
+Using event level: recommend for outcome: nerve_block_binary 
+
+Creating DHARMa object from numeric simulations...
+
+--- Uniformity Test ---
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  simulationOutput$scaledResiduals
+D = 0.0080351, p-value = 0.4883
+alternative hypothesis: two-sided
+
+
+--- Dispersion Test ---
+
+	DHARMa nonparametric dispersion test via sd of residuals fitted vs.
+	simulated
+
+data:  simulationOutput
+dispersion = 1.0128, p-value = 0.764
+alternative hypothesis: two.sided
+
+
+--- Outlier Test ---
+
+	DHARMa outlier test based on exact binomial test with approximate
+	expectations
+
+data:  sim_resid
+outliers at both margin(s) = 23, observations = 10800, p-value = 0.7456
+alternative hypothesis: true probability of success is not equal to 0.001998002
+95 percent confidence interval:
+ 0.001350467 0.003193787
+sample estimates:
+frequency of outliers (expected: 0.001998001998002 ) 
+                                          0.00212963 
+
+
+=======================================================================
+VARIANCE INFLATION FACTORS (VIF)
+=======================================================================
+
+               GVIF Df GVIF^(1/(2*Df))
+variable   1.023589 17        1.000686
+surgery_id 1.023494  5        1.002325
+sex        1.000127  1        1.000064
+
+Interpretation:
+  - For numeric predictors: VIF > 10 suggests multicollinearity
+  - For factors: Examine GVIF^(1/(2*Df)) (rightmost column)
+    Values > 2-3 suggest multicollinearity
+
+=======================================================================
+PLUG-IN PREDICTIVE CHECK
+=======================================================================
+
+Performing plug-in predictive check (event rate)...
+Saved: output/diagnostics/deepseek_nerve_block_binary_bayesian/predictive_check.png 
+
+=======================================================================
+GENERATING DIAGNOSTIC PLOTS
+=======================================================================
+Saved: output/diagnostics/deepseek_nerve_block_binary_bayesian/dharma_diagnostics.png 
+
+=======================================================================
+CREATING DIAGNOSTIC SUMMARY TABLE
+=======================================================================
+      Model_Type    Model            Outcome Event_Level     N Converged
+1 bayesglm (MAP) deepseek nerve_block_binary   recommend 10800      TRUE
+  Convergence_code Iterations Boundary_fit Overdispersion_ratio
+1                0         11        FALSE             1.010824
+  Overdispersion_p DHARMa_uniformity_p DHARMa_dispersion_p DHARMa_outliers_p
+1            0.792           0.4883322               0.764         0.7456114
+
+Saved: output/diagnostics/deepseek_nerve_block_binary_bayesian/diagnostics_summary.csv 
+
+=======================================================================
+SAVING MODEL AND RESULTS
+=======================================================================
+Saved model: models/deepseek_nerve_block_binary_binary_bayesian_glm.rds 
+Saved results: output/diagnostics/deepseek_nerve_block_binary_bayesian/model_results.rds 
+
+=======================================================================
+ITERATION COMPLETE: deepseek - nerve_block_binary 
+=======================================================================

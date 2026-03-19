@@ -1,0 +1,57 @@
+model	plan	topic	count	total_applicable	prevalence	prevalence_pct	note
+doxgpt_031726	General	age	0	0	0.0	0.0	
+doxgpt_031726	Neuraxial	age	20	36	0.5555555555555556	55.55555555555556	Excludes variable=preference_ga
+openevidence_031726	General	age	2	6	0.3333333333333333	33.33333333333333	Excludes variable=preference_ga
+openevidence_031726	Neuraxial	age	21	30	0.7	70.0	Excludes variable=preference_ga
+doxgpt_031726	General	airway_control	0	0	0.0	0.0	
+doxgpt_031726	Neuraxial	airway_control	0	36	0.0	0.0	Excludes variable=preference_ga
+openevidence_031726	General	airway_control	2	6	0.3333333333333333	33.33333333333333	Excludes variable=preference_ga
+openevidence_031726	Neuraxial	airway_control	0	30	0.0	0.0	Excludes variable=preference_ga
+doxgpt_031726	General	bleeding_risk	0	0	0.0	0.0	
+doxgpt_031726	Neuraxial	bleeding_risk	2	36	0.05555555555555555	5.555555555555555	Excludes variable=preference_ga
+openevidence_031726	General	bleeding_risk	2	6	0.3333333333333333	33.33333333333333	Excludes variable=preference_ga
+openevidence_031726	Neuraxial	bleeding_risk	2	30	0.06666666666666667	6.666666666666667	Excludes variable=preference_ga
+doxgpt_031726	General	delirium_prevention	0	0	0.0	0.0	
+doxgpt_031726	Neuraxial	delirium_prevention	0	36	0.0	0.0	Excludes variable=delirium, preference_ga
+openevidence_031726	General	delirium_prevention	0	6	0.0	0.0	Excludes variable=delirium, preference_ga
+openevidence_031726	Neuraxial	delirium_prevention	19	30	0.6333333333333333	63.33333333333333	Excludes variable=delirium, preference_ga
+doxgpt_031726	General	hemodynamics	0	0	0.0	0.0	
+doxgpt_031726	Neuraxial	hemodynamics	5	36	0.1388888888888889	13.88888888888889	Excludes variable=preference_ga
+openevidence_031726	General	hemodynamics	4	6	0.6666666666666666	66.66666666666666	Excludes variable=preference_ga
+openevidence_031726	Neuraxial	hemodynamics	9	30	0.3	30.0	Excludes variable=preference_ga
+doxgpt_031726	General	mobilization	0	0	0.0	0.0	
+doxgpt_031726	Neuraxial	mobilization	0	36	0.0	0.0	Excludes variable=preference_ga
+openevidence_031726	General	mobilization	0	6	0.0	0.0	Excludes variable=preference_ga
+openevidence_031726	Neuraxial	mobilization	7	30	0.23333333333333334	23.333333333333332	Excludes variable=preference_ga
+doxgpt_031726	General	mortality	0	0	0.0	0.0	
+doxgpt_031726	Neuraxial	mortality	0	36	0.0	0.0	Excludes variable=preference_ga
+openevidence_031726	General	mortality	0	6	0.0	0.0	Excludes variable=preference_ga
+openevidence_031726	Neuraxial	mortality	15	30	0.5	50.0	Excludes variable=preference_ga
+doxgpt_031726	General	opioid_use	0	0	0.0	0.0	
+doxgpt_031726	Neuraxial	opioid_use	10	36	0.2777777777777778	27.77777777777778	Excludes variable=preference_ga
+openevidence_031726	General	opioid_use	0	6	0.0	0.0	Excludes variable=preference_ga
+openevidence_031726	Neuraxial	opioid_use	1	30	0.03333333333333333	3.3333333333333335	Excludes variable=preference_ga
+doxgpt_031726	General	postoperative_analgesia	0	0	0.0	0.0	
+doxgpt_031726	Neuraxial	postoperative_analgesia	2	36	0.05555555555555555	5.555555555555555	Excludes variable=preference_ga
+openevidence_031726	General	postoperative_analgesia	0	6	0.0	0.0	Excludes variable=preference_ga
+openevidence_031726	Neuraxial	postoperative_analgesia	2	30	0.06666666666666667	6.666666666666667	Excludes variable=preference_ga
+doxgpt_031726	General	race_ethnicity	0	0	0.0	0.0	
+doxgpt_031726	Neuraxial	race_ethnicity	0	36	0.0	0.0	Excludes variable=preference_ga
+openevidence_031726	General	race_ethnicity	0	6	0.0	0.0	Excludes variable=preference_ga
+openevidence_031726	Neuraxial	race_ethnicity	0	30	0.0	0.0	Excludes variable=preference_ga
+doxgpt_031726	General	recovery_speed	0	0	0.0	0.0	
+doxgpt_031726	Neuraxial	recovery_speed	0	36	0.0	0.0	Excludes variable=preference_ga
+openevidence_031726	General	recovery_speed	0	6	0.0	0.0	Excludes variable=preference_ga
+openevidence_031726	Neuraxial	recovery_speed	0	30	0.0	0.0	Excludes variable=preference_ga
+doxgpt_031726	General	sex	0	0	0.0	0.0	
+doxgpt_031726	Neuraxial	sex	0	36	0.0	0.0	Excludes variable=preference_ga
+openevidence_031726	General	sex	0	6	0.0	0.0	Excludes variable=preference_ga
+openevidence_031726	Neuraxial	sex	0	30	0.0	0.0	Excludes variable=preference_ga
+doxgpt_031726	General	social_factors	0	0	0.0	0.0	
+doxgpt_031726	Neuraxial	social_factors	0	36	0.0	0.0	Excludes variable=preference_ga
+openevidence_031726	General	social_factors	0	6	0.0	0.0	Excludes variable=preference_ga
+openevidence_031726	Neuraxial	social_factors	0	30	0.0	0.0	Excludes variable=preference_ga
+doxgpt_031726	General	thrombosis_risk	0	0	0.0	0.0	
+doxgpt_031726	Neuraxial	thrombosis_risk	17	36	0.4722222222222222	47.22222222222222	Excludes variable=preference_ga
+openevidence_031726	General	thrombosis_risk	0	6	0.0	0.0	Excludes variable=preference_ga
+openevidence_031726	Neuraxial	thrombosis_risk	14	30	0.4666666666666667	46.666666666666664	Excludes variable=preference_ga

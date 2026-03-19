@@ -1,0 +1,173 @@
+
+=======================================================================
+Model: gpt-5-nano-2025-08-07 
+Output directory: output/02_ga_preference/diagnostics/gpt-5-nano-2025-08-07 
+=======================================================================
+
+Sample size: 1200 
+Variables included: preference_ga control 
+
+Outcome distribution by variable:
+           
+            preference_ga control
+  general             599       2
+  neuraxial             1     598
+
+Outcome proportions:
+           
+            preference_ga control
+  general           0.998   0.003
+  neuraxial         0.002   0.997
+
+--- Fitting penalized logistic regression (bayesglm) ---
+Formula: anesthetic_plan_binary ~ variable + surgery_id + sex 
+Prior: Cauchy (Student's t, df=1)
+  Intercept: scale=10, df=1
+  Coefficients: scale=2.5, df=1
+
+Model fitting completed.
+
+=======================================================================
+CONVERGENCE DIAGNOSTICS
+=======================================================================
+
+Converged: TRUE 
+Convergence code: 0 (0 = converged)
+Iterations used: 23 
+
+--- Model Summary ---
+
+Call:
+bayesglm(formula = formula_binary, family = binomial(link = "logit"), 
+    data = model_data, prior.scale = 2.5, prior.df = 1, prior.scale.for.intercept = 10, 
+    prior.df.for.intercept = 1, maxit = 100)
+
+Coefficients:
+                                 Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                      -7.12724    1.55587  -4.581 4.63e-06 ***
+variablecontrol                  13.67662    1.80159   7.591 3.16e-14 ***
+surgery_idhemiarthroplasty        0.02755    1.59186   0.017   0.9862    
+surgery_idlong_cephalomedullary   0.02755    1.59186   0.017   0.9862    
+surgery_idshort_cephalomedullary  1.92189    1.56953   1.225   0.2208    
+surgery_idsliding_hip_screw       0.02755    1.59186   0.017   0.9862    
+surgery_idpercutaneous_screws    -2.67947    1.51253  -1.772   0.0765 .  
+sexfemale                         0.46899    0.98106   0.478   0.6326    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1663.550  on 1199  degrees of freedom
+Residual deviance:   32.483  on 1192  degrees of freedom
+AIC: 48.483
+
+Number of Fisher Scoring iterations: 23
+
+
+=======================================================================
+EFFECT SIZE: PREFERENCE_GA vs CONTROL
+=======================================================================
+
+Risk Difference (preference_ga - control):
+  Risk (control) = 0.996 
+  Risk (preference_ga) = 0.002 
+  Risk Difference = -0.995 
+  95% CI: [ -0.995 , -0.994 ]
+  p-value = <2e-16 
+
+=======================================================================
+OVERDISPERSION DIAGNOSTICS
+=======================================================================
+
+# Overdispersion test
+
+ dispersion ratio = 0.890
+          p-value = 0.784
+
+
+=======================================================================
+DHARMa RESIDUAL DIAGNOSTICS
+=======================================================================
+
+Generating simulated datasets for DHARMa...
+
+Creating DHARMa object...
+
+--- Uniformity Test ---
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  simulationOutput$scaledResiduals
+D = 0.017013, p-value = 0.8781
+alternative hypothesis: two-sided
+
+
+--- Dispersion Test ---
+
+	DHARMa nonparametric dispersion test via sd of residuals fitted vs.
+	simulated
+
+data:  simulationOutput
+dispersion = 0.90567, p-value = 0.796
+alternative hypothesis: two.sided
+
+
+--- Outlier Test ---
+
+	DHARMa outlier test based on exact binomial test with approximate
+	expectations
+
+data:  sim_resid
+outliers at both margin(s) = 1, observations = 1200, p-value = 0.7384
+alternative hypothesis: true probability of success is not equal to 0.001998002
+95 percent confidence interval:
+ 2.109795e-05 4.634202e-03
+sample estimates:
+frequency of outliers (expected: 0.001998001998002 ) 
+                                        0.0008333333 
+
+
+=======================================================================
+VARIANCE INFLATION FACTORS (VIF)
+=======================================================================
+
+               GVIF Df GVIF^(1/(2*Df))
+variable   2.428048  1        1.558220
+surgery_id 2.392789  5        1.091165
+sex        1.035899  1        1.017791
+
+=======================================================================
+PLUG-IN PREDICTIVE CHECK
+=======================================================================
+
+Performing plug-in predictive check (event rate)...
+Saved: output/02_ga_preference/diagnostics/gpt-5-nano-2025-08-07/predictive_check.png 
+
+=======================================================================
+GENERATING DIAGNOSTIC PLOTS
+=======================================================================
+Saved: output/02_ga_preference/diagnostics/gpt-5-nano-2025-08-07/dharma_diagnostics.png 
+
+=======================================================================
+CREATING DIAGNOSTIC SUMMARY TABLE
+=======================================================================
+      Model_Type                 Model                Outcome    N Converged
+1 bayesglm (MAP) gpt-5-nano-2025-08-07 anesthetic_plan_binary 1200      TRUE
+  Convergence_code Iterations Boundary_fit Risk_Control Risk_Preference
+1                0         23        FALSE    0.9964365     0.001900432
+  Risk_Difference RD_CI_lower RD_CI_upper RD_p_value Overdispersion_ratio
+1      -0.9945361   -0.994854  -0.9942182          0            0.8895577
+  Overdispersion_p DHARMa_uniformity_p DHARMa_dispersion_p DHARMa_outliers_p
+1            0.784           0.8780817               0.796         0.7384273
+
+Saved: output/02_ga_preference/diagnostics/gpt-5-nano-2025-08-07/diagnostics_summary.csv 
+
+=======================================================================
+SAVING MODEL AND RESULTS
+=======================================================================
+Saved model: output/02_ga_preference/models/gpt-5-nano-2025-08-07_ga_preference_bayesian.rds 
+Saved results: output/02_ga_preference/diagnostics/gpt-5-nano-2025-08-07/model_results.rds 
+
+=======================================================================
+ITERATION COMPLETE: gpt-5-nano-2025-08-07 
+=======================================================================

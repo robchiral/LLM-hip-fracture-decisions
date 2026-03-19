@@ -1,0 +1,2 @@
+"Model_Type","Model","Outcome","N","Converged","Convergence_code","Iterations","Boundary_fit","Risk_Control","Risk_Preference","Risk_Difference","RD_CI_lower","RD_CI_upper","RD_p_value","Overdispersion_ratio","Overdispersion_p","DHARMa_uniformity_p","DHARMa_dispersion_p","DHARMa_outliers_p"
+"bayesglm (MAP)","gpt-5-2025-08-07","anesthetic_plan_binary",1200,TRUE,0,24,FALSE,0.99982058364748,0.000179416352520402,-0.999641167294959,-0.999641167294959,-0.999641167294959,0,0.00017900493915489,1,0.825834532610092,1,0.520486488141841

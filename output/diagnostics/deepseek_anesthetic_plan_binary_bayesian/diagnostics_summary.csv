@@ -1,0 +1,2 @@
+"Model_Type","Model","Outcome","Event_Level","N","Converged","Convergence_code","Iterations","Boundary_fit","Overdispersion_ratio","Overdispersion_p","DHARMa_uniformity_p","DHARMa_dispersion_p","DHARMa_outliers_p"
+"bayesglm (MAP)","deepseek","anesthetic_plan_binary","neuraxial",10800,TRUE,0,8,FALSE,1.01461822517244,0.376,0.476612670502711,0.482,0.279646570204811

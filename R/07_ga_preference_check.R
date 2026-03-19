@@ -4,6 +4,8 @@
 
 # 1. SETUP
 
+setwd("/Users/robertchen/Documents/GitHub/LLM_hip/analysis")
+
 library(arm)          # Penalized GLM (bayesglm)
 library(performance)  # Model diagnostics
 library(DHARMa)       # Residual diagnostics
@@ -16,6 +18,8 @@ dir.create("output/07_ga_preference/models", showWarnings = FALSE, recursive = T
 dir.create("output/07_ga_preference/diagnostics", showWarnings = FALSE, recursive = TRUE)
 dir.create("output/07_ga_preference/figures", showWarnings = FALSE, recursive = TRUE)
 dir.create("output/07_ga_preference/tables", showWarnings = FALSE, recursive = TRUE)
+
+figure_dpi <- 600
 
 format_model_name <- function(x) {
   model_display <- case_when(
@@ -266,16 +270,16 @@ for (current_model in models) {
       ) +
       theme_minimal()
 
-    ppc_plot_file <- file.path(output_subdir, "predictive_check.png")
-    ggsave(ppc_plot_file, plot = ppc_plot, width = 10, height = 6, dpi = 300)
+    ppc_plot_file <- file.path(output_subdir, "predictive_check.jpg")
+    ggsave(ppc_plot_file, plot = ppc_plot, width = 10, height = 6, dpi = figure_dpi, bg = "white")
     cat("Saved:", ppc_plot_file, "\n")
 
     # 11. DIAGNOSTIC PLOTS
 
     cat("GENERATING DIAGNOSTIC PLOTS\n")
 
-    dharma_plot_file <- file.path(output_subdir, "dharma_diagnostics.png")
-    png(dharma_plot_file, width = 14, height = 8, units = "in", res = 300)
+    dharma_plot_file <- file.path(output_subdir, "dharma_diagnostics.jpg")
+    jpeg(dharma_plot_file, width = 14, height = 8, units = "in", res = figure_dpi, quality = 100)
 
     op <- par(no.readonly = TRUE)
     par(oma = c(0, 0, 4, 0))
@@ -456,8 +460,8 @@ if (length(all_diagnostics_list) > 0) {
       panel.background = element_rect(fill = "white", color = NA)
     )
 
-  forest_plot_file <- "output/07_ga_preference/figures/ga_preference_forest_plot.png"
-  ggsave(forest_plot_file, forest_plot, width = 10, height = 6, dpi = 300)
+  forest_plot_file <- "output/07_ga_preference/figures/ga_preference_forest_plot.jpg"
+  ggsave(forest_plot_file, forest_plot, width = 10, height = 6, dpi = figure_dpi, bg = "white")
   cat("Saved combined forest plot to:", forest_plot_file, "\n")
 
   cat("CREATING GA USAGE TABLE\n")

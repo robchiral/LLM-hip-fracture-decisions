@@ -1,0 +1,2 @@
+"Model_Type","Model","Outcome","Event_Level","N","Converged","Convergence_code","Iterations","Boundary_fit","Overdispersion_ratio","Overdispersion_p","DHARMa_uniformity_p","DHARMa_dispersion_p","DHARMa_outliers_p"
+"bayesglm (MAP)","gpt-5-nano-2025-08-07","nerve_block_binary","recommend",10800,TRUE,0,21,FALSE,0.994731702140722,0.912,0.378835899945865,0.984,0.913881647928035

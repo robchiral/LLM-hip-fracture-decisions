@@ -1,0 +1,2 @@
+"Model_Type","Model","Outcome","Event_Level","N","Converged","Convergence_code","Iterations","Boundary_fit","Overdispersion_ratio","Overdispersion_p","DHARMa_uniformity_p","DHARMa_dispersion_p","DHARMa_outliers_p"
+"bayesglm (MAP)","deepseek","nerve_block_binary","recommend",10800,TRUE,0,11,FALSE,1.01082351183156,0.792,0.488332226486099,0.764,0.745611388963243

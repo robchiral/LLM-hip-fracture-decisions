@@ -1,0 +1,175 @@
+
+=======================================================================
+Model: gemini-2.5-flash-preview-09-2025 
+Output directory: output/02_ga_preference/diagnostics/gemini-2.5-flash-preview-09-2025 
+=======================================================================
+
+Sample size: 1200 
+Variables included: preference_ga control 
+
+Outcome distribution by variable:
+           
+            preference_ga control
+  general             600      36
+  neuraxial             0     564
+
+Outcome proportions:
+           
+            preference_ga control
+  general            1.00    0.06
+  neuraxial          0.00    0.94
+
+--- Fitting penalized logistic regression (bayesglm) ---
+Formula: anesthetic_plan_binary ~ variable + surgery_id + sex 
+Prior: Cauchy (Student's t, df=1)
+  Intercept: scale=10, df=1
+  Coefficients: scale=2.5, df=1
+
+Model fitting completed.
+
+=======================================================================
+CONVERGENCE DIAGNOSTICS
+=======================================================================
+
+Converged: TRUE 
+Convergence code: 0 (0 = converged)
+Iterations used: 17 
+
+--- Model Summary ---
+
+Call:
+bayesglm(formula = formula_binary, family = binomial(link = "logit"), 
+    data = model_data, prior.scale = 2.5, prior.df = 1, prior.scale.for.intercept = 10, 
+    prior.df.for.intercept = 1, maxit = 100)
+
+Coefficients:
+                                 Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                       -7.6501     2.5386  -3.014 0.002582 ** 
+variablecontrol                   12.8699     2.5274   5.092 3.54e-07 ***
+surgery_idhemiarthroplasty        -0.6104     0.9406  -0.649 0.516363    
+surgery_idlong_cephalomedullary   -2.8473     0.7798  -3.651 0.000261 ***
+surgery_idshort_cephalomedullary  -1.3271     0.8596  -1.544 0.122618    
+surgery_idsliding_hip_screw        1.1244     1.3794   0.815 0.414974    
+surgery_idpercutaneous_screws     -2.8473     0.7798  -3.651 0.000261 ***
+sexfemale                         -1.0295     0.3803  -2.707 0.006780 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1659.23  on 1199  degrees of freedom
+Residual deviance:  216.96  on 1192  degrees of freedom
+AIC: 232.96
+
+Number of Fisher Scoring iterations: 17
+
+
+=======================================================================
+EFFECT SIZE: PREFERENCE_GA vs CONTROL
+=======================================================================
+
+Risk Difference (preference_ga - control):
+  Risk (control) = 0.94 
+  Risk (preference_ga) = 0 
+  Risk Difference = -0.94 
+  95% CI: [ -0.944 , -0.935 ]
+  p-value = <2e-16 
+
+=======================================================================
+OVERDISPERSION DIAGNOSTICS
+=======================================================================
+
+# Overdispersion test
+
+ dispersion ratio = 0.957
+          p-value = 0.792
+
+
+=======================================================================
+DHARMa RESIDUAL DIAGNOSTICS
+=======================================================================
+
+Generating simulated datasets for DHARMa...
+
+Creating DHARMa object...
+
+--- Uniformity Test ---
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  simulationOutput$scaledResiduals
+D = 0.015222, p-value = 0.9437
+alternative hypothesis: two-sided
+
+
+--- Dispersion Test ---
+
+	DHARMa nonparametric dispersion test via sd of residuals fitted vs.
+	simulated
+
+data:  simulationOutput
+dispersion = 0.97448, p-value = 0.856
+alternative hypothesis: two.sided
+
+
+--- Outlier Test ---
+
+	DHARMa outlier test based on exact binomial test with approximate
+	expectations
+
+data:  sim_resid
+outliers at both margin(s) = 2, observations = 1200, p-value = 1
+alternative hypothesis: true probability of success is not equal to 0.001998002
+95 percent confidence interval:
+ 0.0002019048 0.0060074808
+sample estimates:
+frequency of outliers (expected: 0.001998001998002 ) 
+                                         0.001666667 
+
+
+=======================================================================
+VARIANCE INFLATION FACTORS (VIF)
+=======================================================================
+
+               GVIF Df GVIF^(1/(2*Df))
+variable   1.115634  1        1.056236
+surgery_id 1.112848  5        1.010750
+sex        1.005675  1        1.002833
+
+=======================================================================
+PLUG-IN PREDICTIVE CHECK
+=======================================================================
+
+Performing plug-in predictive check (event rate)...
+Saved: output/02_ga_preference/diagnostics/gemini-2.5-flash-preview-09-2025/predictive_check.png 
+
+=======================================================================
+GENERATING DIAGNOSTIC PLOTS
+=======================================================================
+Saved: output/02_ga_preference/diagnostics/gemini-2.5-flash-preview-09-2025/dharma_diagnostics.png 
+
+=======================================================================
+CREATING DIAGNOSTIC SUMMARY TABLE
+=======================================================================
+      Model_Type                            Model                Outcome    N
+1 bayesglm (MAP) gemini-2.5-flash-preview-09-2025 anesthetic_plan_binary 1200
+  Converged Convergence_code Iterations Boundary_fit Risk_Control
+1      TRUE                0         17        FALSE    0.9397878
+  Risk_Preference Risk_Difference RD_CI_lower RD_CI_upper RD_p_value
+1     0.000269077      -0.9395187  -0.9435497  -0.9354877          0
+  Overdispersion_ratio Overdispersion_p DHARMa_uniformity_p DHARMa_dispersion_p
+1            0.9573203            0.792           0.9437484               0.856
+  DHARMa_outliers_p
+1                 1
+
+Saved: output/02_ga_preference/diagnostics/gemini-2.5-flash-preview-09-2025/diagnostics_summary.csv 
+
+=======================================================================
+SAVING MODEL AND RESULTS
+=======================================================================
+Saved model: output/02_ga_preference/models/gemini-2.5-flash-preview-09-2025_ga_preference_bayesian.rds 
+Saved results: output/02_ga_preference/diagnostics/gemini-2.5-flash-preview-09-2025/model_results.rds 
+
+=======================================================================
+ITERATION COMPLETE: gemini-2.5-flash-preview-09-2025 
+=======================================================================

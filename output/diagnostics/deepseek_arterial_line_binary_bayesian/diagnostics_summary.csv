@@ -1,0 +1,2 @@
+"Model_Type","Model","Outcome","Event_Level","N","Converged","Convergence_code","Iterations","Boundary_fit","Overdispersion_ratio","Overdispersion_p","DHARMa_uniformity_p","DHARMa_dispersion_p","DHARMa_outliers_p"
+"bayesglm (MAP)","deepseek","arterial_line_binary","recommend",10800,TRUE,0,8,FALSE,1.00358903824732,0.84,0.355201691116771,0.886,0.449122205656427

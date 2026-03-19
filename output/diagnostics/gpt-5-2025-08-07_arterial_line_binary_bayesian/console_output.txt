@@ -1,0 +1,180 @@
+
+=======================================================================
+Fitting model for: gpt-5-2025-08-07 - arterial_line_binary 
+Event level: recommend 
+Output directory: output/diagnostics/gpt-5-2025-08-07_arterial_line_binary_bayesian 
+=======================================================================
+
+Sample size: 10800 
+
+Outcome distribution:
+
+  against recommend 
+     9856       944 
+
+Outcome proportions:
+
+  against recommend 
+    0.913     0.087 
+
+--- Fitting penalized logistic regression (bayesglm) ---
+Formula: arterial_line_binary ~ variable + surgery_id + sex 
+Prior: Cauchy (Student's t, df=1) - Gelman et al. 2008
+  Intercept: scale=10, df=1
+  Coefficients: scale=2.5, df=1
+
+Model fitting completed.
+
+=======================================================================
+CONVERGENCE DIAGNOSTICS
+=======================================================================
+
+Converged: TRUE 
+Convergence code: 0 (0 = converged)
+Iterations used: 14 
+
+--- Model Summary ---
+
+Call:
+bayesglm(formula = formula_binary, family = binomial(link = "logit"), 
+    data = model_data, prior.scale = 2.5, prior.df = 1, prior.scale.for.intercept = 10, 
+    prior.df.for.intercept = 1, maxit = 100)
+
+Coefficients:
+                                 Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                       -0.7952     0.2059  -3.863 0.000112 ***
+variablestent                      4.4642     0.3171  14.080  < 2e-16 ***
+variableobesity                   -1.1581     0.3393  -3.413 0.000642 ***
+variablelumbar_fusion             -1.9494     0.4384  -4.446 8.74e-06 ***
+variabledelirium                  -1.6630     0.3965  -4.195 2.73e-05 ***
+variablecopd                      -1.9494     0.4384  -4.446 8.74e-06 ***
+variableaortic_stenosis           13.4112     0.9418  14.240  < 2e-16 ***
+variableunhoused                  -2.3388     0.5087  -4.598 4.28e-06 ***
+variableundocumented              -2.1265     0.4684  -4.540 5.62e-06 ***
+variableivdu                      -2.3388     0.5087  -4.598 4.28e-06 ***
+variablewhite                     -1.7970     0.4152  -4.328 1.50e-05 ***
+variablepacific_islander          -1.7970     0.4152  -4.328 1.50e-05 ***
+variablenative_american           -1.7970     0.4152  -4.328 1.50e-05 ***
+variablemiddle_eastern            -1.6630     0.3965  -4.195 2.73e-05 ***
+variablehispanic                  -2.3388     0.5087  -4.598 4.28e-06 ***
+variableblack                     -2.6048     0.5667  -4.597 4.29e-06 ***
+variableasian                     -2.3388     0.5087  -4.598 4.28e-06 ***
+variablecontrol                   -2.9643     0.6598  -4.493 7.02e-06 ***
+surgery_idhemiarthroplasty        -2.0750     0.2442  -8.498  < 2e-16 ***
+surgery_idlong_cephalomedullary   -3.9793     0.3294 -12.079  < 2e-16 ***
+surgery_idshort_cephalomedullary  -8.3932     0.9059  -9.265  < 2e-16 ***
+surgery_idsliding_hip_screw       -7.1810     0.6383 -11.250  < 2e-16 ***
+surgery_idpercutaneous_screws     -9.5803     0.9915  -9.662  < 2e-16 ***
+sexfemale                         -0.1909     0.1548  -1.233 0.217492    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 6404.4  on 10799  degrees of freedom
+Residual deviance: 1247.1  on 10776  degrees of freedom
+AIC: 1295.1
+
+Number of Fisher Scoring iterations: 14
+
+
+=======================================================================
+OVERDISPERSION DIAGNOSTICS
+=======================================================================
+
+# Overdispersion test
+
+ dispersion ratio = 0.976
+          p-value = 0.696
+
+
+=======================================================================
+DHARMa RESIDUAL DIAGNOSTICS
+=======================================================================
+
+Generating simulated datasets for DHARMa...
+Using event level: recommend for outcome: arterial_line_binary 
+
+Creating DHARMa object from numeric simulations...
+
+--- Uniformity Test ---
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  simulationOutput$scaledResiduals
+D = 0.0091153, p-value = 0.3308
+alternative hypothesis: two-sided
+
+
+--- Dispersion Test ---
+
+	DHARMa nonparametric dispersion test via sd of residuals fitted vs.
+	simulated
+
+data:  simulationOutput
+dispersion = 0.98036, p-value = 0.766
+alternative hypothesis: two.sided
+
+
+--- Outlier Test ---
+
+	DHARMa outlier test based on exact binomial test with approximate
+	expectations
+
+data:  sim_resid
+outliers at both margin(s) = 24, observations = 10800, p-value = 0.5887
+alternative hypothesis: true probability of success is not equal to 0.001998002
+95 percent confidence interval:
+ 0.001424323 0.003304698
+sample estimates:
+frequency of outliers (expected: 0.001998001998002 ) 
+                                         0.002222222 
+
+
+=======================================================================
+VARIANCE INFLATION FACTORS (VIF)
+=======================================================================
+
+                GVIF Df GVIF^(1/(2*Df))
+variable   13.486048 17        1.079523
+surgery_id 13.469623  5        1.296987
+sex         1.002907  1        1.001453
+
+Interpretation:
+  - For numeric predictors: VIF > 10 suggests multicollinearity
+  - For factors: Examine GVIF^(1/(2*Df)) (rightmost column)
+    Values > 2-3 suggest multicollinearity
+
+=======================================================================
+PLUG-IN PREDICTIVE CHECK
+=======================================================================
+
+Performing plug-in predictive check (event rate)...
+Saved: output/diagnostics/gpt-5-2025-08-07_arterial_line_binary_bayesian/predictive_check.png 
+
+=======================================================================
+GENERATING DIAGNOSTIC PLOTS
+=======================================================================
+Saved: output/diagnostics/gpt-5-2025-08-07_arterial_line_binary_bayesian/dharma_diagnostics.png 
+
+=======================================================================
+CREATING DIAGNOSTIC SUMMARY TABLE
+=======================================================================
+      Model_Type            Model              Outcome Event_Level     N
+1 bayesglm (MAP) gpt-5-2025-08-07 arterial_line_binary   recommend 10800
+  Converged Convergence_code Iterations Boundary_fit Overdispersion_ratio
+1      TRUE                0         14        FALSE            0.9761086
+  Overdispersion_p DHARMa_uniformity_p DHARMa_dispersion_p DHARMa_outliers_p
+1            0.696           0.3308307               0.766         0.5887135
+
+Saved: output/diagnostics/gpt-5-2025-08-07_arterial_line_binary_bayesian/diagnostics_summary.csv 
+
+=======================================================================
+SAVING MODEL AND RESULTS
+=======================================================================
+Saved model: models/gpt-5-2025-08-07_arterial_line_binary_binary_bayesian_glm.rds 
+Saved results: output/diagnostics/gpt-5-2025-08-07_arterial_line_binary_bayesian/model_results.rds 
+
+=======================================================================
+ITERATION COMPLETE: gpt-5-2025-08-07 - arterial_line_binary 
+=======================================================================

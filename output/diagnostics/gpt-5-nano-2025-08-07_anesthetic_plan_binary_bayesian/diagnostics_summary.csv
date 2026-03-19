@@ -1,0 +1,2 @@
+"Model_Type","Model","Outcome","Event_Level","N","Converged","Convergence_code","Iterations","Boundary_fit","Overdispersion_ratio","Overdispersion_p","DHARMa_uniformity_p","DHARMa_dispersion_p","DHARMa_outliers_p"
+"bayesglm (MAP)","gpt-5-nano-2025-08-07","anesthetic_plan_binary","neuraxial",10800,TRUE,0,19,FALSE,0.938632077064547,0.552,0.553659183675918,0.536,0.666362923774213

@@ -4,6 +4,9 @@
 
 # 1. SETUP 
 
+# Set working directory
+setwd("/Users/robertchen/Documents/GitHub/LLM_hip/analysis")
+
 # Load required packages
 library(arm)          # Penalized GLM (bayesglm = MAP estimation with Cauchy prior)
 library(performance)   # Model diagnostics
@@ -17,6 +20,8 @@ library(patchwork)    # Combining plots
 # Create output directories if they don't exist
 dir.create("models", showWarnings = FALSE)
 dir.create("output/diagnostics", showWarnings = FALSE, recursive = TRUE)
+
+figure_dpi <- 600
 
 # 2. LOAD DATA
 
@@ -292,8 +297,8 @@ for (current_model in models) {
         ) +
         theme_minimal()
 
-      ppc_plot_file <- file.path(output_subdir, "predictive_check.png")
-      ggsave(ppc_plot_file, plot = ppc_plot, width = 10, height = 6, dpi = 300)
+      ppc_plot_file <- file.path(output_subdir, "predictive_check.jpg")
+      ggsave(ppc_plot_file, plot = ppc_plot, width = 10, height = 6, dpi = figure_dpi, bg = "white")
       cat("Saved:", ppc_plot_file, "\n")
 
       # 10. DIAGNOSTIC PLOTS 
@@ -303,8 +308,8 @@ for (current_model in models) {
       cat("==\n")
 
       # DHARMa diagnostic plots
-      dharma_plot_file <- file.path(output_subdir, "dharma_diagnostics.png")
-      png(dharma_plot_file, width = 14, height = 8, units = "in", res = 300)
+      dharma_plot_file <- file.path(output_subdir, "dharma_diagnostics.jpg")
+      jpeg(dharma_plot_file, width = 14, height = 8, units = "in", res = figure_dpi, quality = 100)
 
       op <- par(no.readonly = TRUE)
       par(oma = c(0, 0, 4, 0))

@@ -1,0 +1,173 @@
+
+=======================================================================
+Model: deepseek 
+Output directory: output/02_ga_preference/diagnostics/deepseek 
+=======================================================================
+
+Sample size: 1200 
+Variables included: preference_ga control 
+
+Outcome distribution by variable:
+           
+            preference_ga control
+  general             600     103
+  neuraxial             0     497
+
+Outcome proportions:
+           
+            preference_ga control
+  general           1.000   0.172
+  neuraxial         0.000   0.828
+
+--- Fitting penalized logistic regression (bayesglm) ---
+Formula: anesthetic_plan_binary ~ variable + surgery_id + sex 
+Prior: Cauchy (Student's t, df=1)
+  Intercept: scale=10, df=1
+  Coefficients: scale=2.5, df=1
+
+Model fitting completed.
+
+=======================================================================
+CONVERGENCE DIAGNOSTICS
+=======================================================================
+
+Converged: TRUE 
+Convergence code: 0 (0 = converged)
+Iterations used: 17 
+
+--- Model Summary ---
+
+Call:
+bayesglm(formula = formula_binary, family = binomial(link = "logit"), 
+    data = model_data, prior.scale = 2.5, prior.df = 1, prior.scale.for.intercept = 10, 
+    prior.df.for.intercept = 1, maxit = 100)
+
+Coefficients:
+                                 Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                       -7.4823     2.3232  -3.221  0.00128 ** 
+variablecontrol                   11.6338     2.3067   5.043 4.57e-07 ***
+surgery_idhemiarthroplasty         0.1864     0.9921   0.188  0.85098    
+surgery_idlong_cephalomedullary   -4.7374     0.7074  -6.697 2.13e-11 ***
+surgery_idshort_cephalomedullary  -3.1768     0.7131  -4.455 8.40e-06 ***
+surgery_idsliding_hip_screw       -2.2640     0.7360  -3.076  0.00210 ** 
+surgery_idpercutaneous_screws     -1.0473     0.8116  -1.290  0.19692    
+sexfemale                          0.3002     0.2592   1.158  0.24677    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1628.01  on 1199  degrees of freedom
+Residual deviance:  366.13  on 1192  degrees of freedom
+AIC: 382.13
+
+Number of Fisher Scoring iterations: 17
+
+
+=======================================================================
+EFFECT SIZE: PREFERENCE_GA vs CONTROL
+=======================================================================
+
+Risk Difference (preference_ga - control):
+  Risk (control) = 0.828 
+  Risk (preference_ga) = 0 
+  Risk Difference = -0.828 
+  95% CI: [ -0.84 , -0.816 ]
+  p-value = <2e-16 
+
+=======================================================================
+OVERDISPERSION DIAGNOSTICS
+=======================================================================
+
+# Overdispersion test
+
+ dispersion ratio = 0.979
+          p-value = 0.816
+
+
+=======================================================================
+DHARMa RESIDUAL DIAGNOSTICS
+=======================================================================
+
+Generating simulated datasets for DHARMa...
+
+Creating DHARMa object...
+
+--- Uniformity Test ---
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  simulationOutput$scaledResiduals
+D = 0.021995, p-value = 0.6071
+alternative hypothesis: two-sided
+
+
+--- Dispersion Test ---
+
+	DHARMa nonparametric dispersion test via sd of residuals fitted vs.
+	simulated
+
+data:  simulationOutput
+dispersion = 0.97924, p-value = 0.818
+alternative hypothesis: two.sided
+
+
+--- Outlier Test ---
+
+	DHARMa outlier test based on exact binomial test with approximate
+	expectations
+
+data:  sim_resid
+outliers at both margin(s) = 3, observations = 1200, p-value = 0.5205
+alternative hypothesis: true probability of success is not equal to 0.001998002
+95 percent confidence interval:
+ 0.0005158571 0.0072885226
+sample estimates:
+frequency of outliers (expected: 0.001998001998002 ) 
+                                              0.0025 
+
+
+=======================================================================
+VARIANCE INFLATION FACTORS (VIF)
+=======================================================================
+
+               GVIF Df GVIF^(1/(2*Df))
+variable   1.038497  1        1.019067
+surgery_id 1.042838  5        1.004203
+sex        1.004504  1        1.002249
+
+=======================================================================
+PLUG-IN PREDICTIVE CHECK
+=======================================================================
+
+Performing plug-in predictive check (event rate)...
+Saved: output/02_ga_preference/diagnostics/deepseek/predictive_check.png 
+
+=======================================================================
+GENERATING DIAGNOSTIC PLOTS
+=======================================================================
+Saved: output/02_ga_preference/diagnostics/deepseek/dharma_diagnostics.png 
+
+=======================================================================
+CREATING DIAGNOSTIC SUMMARY TABLE
+=======================================================================
+      Model_Type    Model                Outcome    N Converged
+1 bayesglm (MAP) deepseek anesthetic_plan_binary 1200      TRUE
+  Convergence_code Iterations Boundary_fit Risk_Control Risk_Preference
+1                0         17        FALSE     0.828104    0.0002986064
+  Risk_Difference RD_CI_lower RD_CI_upper RD_p_value Overdispersion_ratio
+1      -0.8278054  -0.8397774  -0.8158334          0            0.9788875
+  Overdispersion_p DHARMa_uniformity_p DHARMa_dispersion_p DHARMa_outliers_p
+1            0.816           0.6071401               0.818         0.5204865
+
+Saved: output/02_ga_preference/diagnostics/deepseek/diagnostics_summary.csv 
+
+=======================================================================
+SAVING MODEL AND RESULTS
+=======================================================================
+Saved model: output/02_ga_preference/models/deepseek_ga_preference_bayesian.rds 
+Saved results: output/02_ga_preference/diagnostics/deepseek/model_results.rds 
+
+=======================================================================
+ITERATION COMPLETE: deepseek 
+=======================================================================

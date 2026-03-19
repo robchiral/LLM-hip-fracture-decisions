@@ -1,6 +1,9 @@
 # SCRIPT 1: Data Preparation and Descriptive Statistics
 # Purpose: Load data, create factors, generate descriptive statistics.
 
+# Set working directory
+setwd("/Users/robertchen/Documents/GitHub/LLM_hip/analysis")
+
 # Load required packages
 library(tidyverse)
 library(data.table)
@@ -8,11 +11,14 @@ library(knitr)
 library(kableExtra)
 library(ggplot2)
 library(patchwork)
+library(irrCAC)
 
 # Create output directories if they don't exist
 dir.create("./data", showWarnings = FALSE, recursive = TRUE)
 dir.create("./output/01_descriptives/tables", showWarnings = FALSE, recursive = TRUE)
 dir.create("./output/01_descriptives/figures", showWarnings = FALSE, recursive = TRUE)
+
+figure_dpi <- 600
 
 # LABEL FORMATTING FUNCTION
 format_label <- function(x) {
@@ -352,6 +358,89 @@ data_for_plots <- data %>%
   filter(variable != "preference_ga") %>%
   droplevels()
 
+# ==============================================================================
+# INTER-MODEL AGREEMENT (Gwet's AC2)
+# ==============================================================================
+
+cat("\n=== Inter-Model Agreement ===\n")
+
+outcomes_agreement <- tribble(
+  ~outcome_var, ~outcome_name,
+  "nerve_block", "Nerve block",
+  "anesthetic_plan", "Anesthesia type",
+  "arterial_line", "Arterial line"
+)
+
+model_names_raw <- sort(unique(as.character(data_for_plots$model_name)))
+
+# Compute modal responses per model per scenario (4-level ordinal)
+modal_responses <- list()
+
+for (i in 1:nrow(outcomes_agreement)) {
+  outcome_var <- outcomes_agreement$outcome_var[i]
+  outcome_name <- outcomes_agreement$outcome_name[i]
+
+  cat("Computing modal responses for", outcome_name, "\n")
+
+  scenario_summary <- data_for_plots %>%
+    group_by(model_name, surgery_id, sex, variable) %>%
+    summarise(
+      modal_response = {
+        counts <- table(!!sym(outcome_var))
+        as.integer(which.max(counts))
+      },
+      .groups = "drop"
+    ) %>%
+    mutate(scenario_id = paste(surgery_id, sex, variable, sep = "_"))
+
+  modal_wide <- scenario_summary %>%
+    select(scenario_id, model_name, modal_response) %>%
+    pivot_wider(names_from = model_name, values_from = modal_response) %>%
+    column_to_rownames("scenario_id")
+
+  modal_responses[[outcome_name]] <- modal_wide
+}
+
+# Pairwise Gwet's AC2
+pairwise_ac2_results <- list()
+for (outcome_name in names(modal_responses)) {
+  ratings_df <- as.data.frame(modal_responses[[outcome_name]])
+  cat("Computing pairwise Gwet's AC2 for", outcome_name, "\n")
+  pairs <- list()
+  for (j in 1:(length(model_names_raw) - 1)) {
+    for (k in (j + 1):length(model_names_raw)) {
+      pair_df <- ratings_df[, c(j, k)]
+      ac2_result <- gwet.ac1.raw(pair_df, weights = "quadratic")
+      ac2_val <- max(-1, min(1, ac2_result$est$coeff.val))
+      pairs[[length(pairs) + 1]] <- tibble(
+        model1 = model_names_raw[j],
+        model2 = model_names_raw[k],
+        ac2 = ac2_val,
+        outcome = outcome_name
+      )
+    }
+  }
+  pairwise_ac2_results[[outcome_name]] <- bind_rows(pairs)
+}
+pairwise_ac2_df <- bind_rows(pairwise_ac2_results)
+write_csv(pairwise_ac2_df, "./output/01_descriptives/tables/pairwise_gwet_ac2.csv")
+
+# Build heatmap data
+model_display_levels <- format_model_name(model_names_raw)
+heatmap_all <- pairwise_ac2_df %>%
+  bind_rows(pairwise_ac2_df %>% rename(model1 = model2, model2 = model1)) %>%
+  bind_rows(
+    expand_grid(model1 = model_names_raw, outcome = unique(pairwise_ac2_df$outcome)) %>%
+      mutate(model2 = model1, ac2 = 1.0)
+  ) %>%
+  mutate(
+    model1_display = factor(format_model_name(model1), levels = model_display_levels),
+    model2_display = factor(format_model_name(model2), levels = model_display_levels)
+  ) %>%
+  filter(as.numeric(model1_display) >= as.numeric(model2_display))
+
+cat("Inter-model agreement analysis complete.\n")
+
 # Palettes
 colors_4level <- c("#b2182b", "#ef8a62", "#67a9cf", "#2166ac")
 colors_asa6   <- c("#edf8fb", "#b2e2e2", "#66c2a4", "#2ca25f", "#006d2c", "#00441b")
@@ -383,6 +472,34 @@ theme_compact <- theme_minimal(base_size = 8) +
 mk_outcome_display <- function(df, var) {
   lvls <- levels(df[[var]])
   factor(format_label(as.character(df[[var]])), levels = format_label(lvls))
+}
+
+build_agreement_heatmap <- function(data, outcome_name, show_legend = FALSE) {
+  data %>%
+    filter(outcome == outcome_name) %>%
+    ggplot(aes(x = model2_display, y = model1_display, fill = ac2)) +
+    geom_tile(color = "white", linewidth = 0.5) +
+    geom_text(aes(label = sprintf("%.2f", ac2)), size = 1.8) +
+    scale_fill_gradient2(
+      name = "Gwet's AC2",
+      low = "#d73027", mid = "#ffffbf", high = "#1a9850",
+      midpoint = 0.5, limits = c(-1, 1), oob = scales::squish,
+      guide = guide_colorbar(
+        barheight = unit(3.2, "cm"),
+        barwidth = unit(0.35, "cm")
+      )
+    ) +
+    scale_y_discrete(limits = rev) +
+    coord_equal() +
+    theme_compact +
+    theme(
+      axis.text.x = element_text(angle = 30, hjust = 1, size = 6),
+      axis.text.y = element_text(size = 6),
+      panel.grid = element_blank(),
+      legend.position = if (show_legend) "right" else "none",
+      plot.margin = margin(t = 6, r = 2, b = 2, l = 1)
+    ) +
+    labs(x = NULL, y = NULL, title = outcome_name)
 }
 
 # ---------- Builders (string-based; no quosures) ----------
@@ -477,6 +594,7 @@ n_models    <- length(unique(data_for_plots$model_name))
 
 h_overall_block <- (n_models * 0.35 + 0.9)
 h_plot1 <- 3 * h_overall_block + 1.0
+h_plot6 <- 6.6
 
 h_var    <- n_variables * 0.30 + n_models * 0.45 + 0.6
 h_surg   <- n_surgeries * 0.30 + n_models * 0.45 + 0.6
@@ -484,31 +602,53 @@ h_sex    <- n_sex * 0.30 + n_models * 0.45 + 0.6
 h_combo  <- max(h_var, (h_surg + h_sex + 0.7))
 w_combo  <- 8.5
 
-# ---------- PLOT 1: three separate legends, directly under each subplot ----------
+# ---------- PLOT 1: overall preference barplots ----------
 p1_ap <- plot_overall_by_model(data_for_plots, "anesthetic_plan",
            "Anesthesia type by model", colors_4level,
-           bar_width = BAR_WIDTH_SINGLE) + theme(legend.position = "bottom")
+           bar_width = BAR_WIDTH_SINGLE) +
+  labs(x = "Percent of model responses")
 p1_nb <- plot_overall_by_model(data_for_plots, "nerve_block",
            "Nerve block by model", colors_4level,
-           bar_width = BAR_WIDTH_SINGLE) + theme(legend.position = "bottom")
+           bar_width = BAR_WIDTH_SINGLE) +
+  labs(x = "Percent of model responses")
 p1_al <- plot_overall_by_model(data_for_plots, "arterial_line",
            "Arterial line by model", colors_4level,
-           bar_width = BAR_WIDTH_SINGLE) + theme(legend.position = "bottom")
+           bar_width = BAR_WIDTH_SINGLE) +
+  labs(x = "Percent of model responses")
 
-plot1_overall <- (p1_ap / p1_nb / p1_al) + plot_layout(guides = "keep")
-ggsave("./output/01_descriptives/figures/plot1_overall_preferences.png",
-       plot1_overall, width = 7, height = h_plot1, dpi = 300)
+plot1_overall <- p1_ap / p1_nb / p1_al
+ggsave("./output/01_descriptives/figures/plot1_overall_preferences.jpg",
+       plot1_overall, width = 7, height = h_plot1 + 1, dpi = figure_dpi, bg = "white")
+
+# ---------- PLOT 6: pairwise Gwet's AC2 heatmaps ----------
+h_ap <- build_agreement_heatmap(heatmap_all, "Anesthesia type", show_legend = TRUE)
+h_nb <- build_agreement_heatmap(heatmap_all, "Nerve block", show_legend = TRUE)
+h_al <- build_agreement_heatmap(heatmap_all, "Arterial line", show_legend = TRUE)
+
+plot6_gwet_ac2 <- wrap_plots(
+  h_ap, h_nb, h_al, plot_spacer(),
+  ncol = 2,
+  guides = "collect"
+) & theme(
+  legend.position = "right",
+  legend.title = element_text(size = 7),
+  legend.text = element_text(size = 7),
+  plot.margin = margin(t = 2, r = 2, b = 2, l = 2)
+)
+ggsave("./output/01_descriptives/figures/plot6_gwet_ac2.jpg",
+       plot6_gwet_ac2, width = 7.2, height = h_plot6, dpi = figure_dpi, bg = "white")
 
 # ---------- OVERALL ASA PLOT (separate from plot 1) ----------
 p_asa_overall <- plot_overall_by_model(data_for_plots, "asa_classification",
            "ASA classification by model", colors_asa6,
            bar_width = BAR_WIDTH_SINGLE) +
   theme(legend.position = "bottom") +
-  guides(fill = guide_legend(ncol = 3))
+  guides(fill = guide_legend(ncol = 3)) +
+  labs(x = "Percent of model responses")
 
 h_asa_overall <- (n_models * 0.35 + 0.9)
-ggsave("./output/01_descriptives/figures/plot_asa_overall.png",
-       p_asa_overall, width = 7, height = h_asa_overall, dpi = 300)
+ggsave("./output/01_descriptives/figures/plot_asa_overall.jpg",
+       p_asa_overall, width = 7, height = h_asa_overall, dpi = figure_dpi, bg = "white")
 
 # ---------- Two-column composite helper (shared legend under right column) ----------
 build_two_col_composite <- function(p_left, p_top_right, p_bottom_right,
@@ -522,31 +662,37 @@ build_two_col_composite <- function(p_left, p_top_right, p_bottom_right,
 }
 
 # ---------- PLOT 2: Nerve block ----------
-p2_left <- plot_variable_outcome(data_for_plots, "nerve_block", "Nerve block by variable", colors_4level)
+p2_left <- plot_variable_outcome(data_for_plots, "nerve_block", "Nerve block by variable", colors_4level) +
+  labs(x = "Percent of model responses")
 p2_tr   <- plot_by_surgery(data_for_plots,  "nerve_block", "Nerve block by surgery", colors_4level)
-p2_br   <- plot_by_sex(data_for_plots,      "nerve_block", "Nerve block by sex",     colors_4level)
+p2_br   <- plot_by_sex(data_for_plots,      "nerve_block", "Nerve block by sex",     colors_4level) +
+  labs(x = "Percent of model responses")
 plot2_nb <- build_two_col_composite(p2_left, p2_tr, p2_br,
                                     n_surgeries, n_sex)
-ggsave("./output/01_descriptives/figures/plot2_nerve_block_combo.png",
-       plot2_nb, width = w_combo, height = h_combo, dpi = 300)
+ggsave("./output/01_descriptives/figures/plot2_nerve_block_combo.jpg",
+       plot2_nb, width = w_combo, height = h_combo, dpi = figure_dpi, bg = "white")
 
 # ---------- PLOT 3: Anesthesia type ----------
-p3_left <- plot_variable_outcome(data_for_plots, "anesthetic_plan", "Anesthesia type by variable", colors_4level)
+p3_left <- plot_variable_outcome(data_for_plots, "anesthetic_plan", "Anesthesia type by variable", colors_4level) +
+  labs(x = "Percent of model responses")
 p3_tr   <- plot_by_surgery(data_for_plots,  "anesthetic_plan", "Anesthesia type by surgery", colors_4level)
-p3_br   <- plot_by_sex(data_for_plots,      "anesthetic_plan", "Anesthesia type by sex",     colors_4level)
+p3_br   <- plot_by_sex(data_for_plots,      "anesthetic_plan", "Anesthesia type by sex",     colors_4level) +
+  labs(x = "Percent of model responses")
 plot3_ap <- build_two_col_composite(p3_left, p3_tr, p3_br,
                                     n_surgeries, n_sex)
-ggsave("./output/01_descriptives/figures/plot3_anesthetic_plan_combo.png",
-       plot3_ap, width = w_combo, height = h_combo, dpi = 300)
+ggsave("./output/01_descriptives/figures/plot3_anesthetic_plan_combo.jpg",
+       plot3_ap, width = w_combo, height = h_combo, dpi = figure_dpi, bg = "white")
 
 # ---------- PLOT 4: Arterial line ----------
-p4_left <- plot_variable_outcome(data_for_plots, "arterial_line", "Arterial line by variable", colors_4level)
+p4_left <- plot_variable_outcome(data_for_plots, "arterial_line", "Arterial line by variable", colors_4level) +
+  labs(x = "Percent of model responses")
 p4_tr   <- plot_by_surgery(data_for_plots,  "arterial_line", "Arterial line by surgery", colors_4level)
-p4_br   <- plot_by_sex(data_for_plots,      "arterial_line", "Arterial line by sex",     colors_4level)
+p4_br   <- plot_by_sex(data_for_plots,      "arterial_line", "Arterial line by sex",     colors_4level) +
+  labs(x = "Percent of model responses")
 plot4_al <- build_two_col_composite(p4_left, p4_tr, p4_br,
                                     n_surgeries, n_sex)
-ggsave("./output/01_descriptives/figures/plot4_arterial_line_combo.png",
-       plot4_al, width = w_combo, height = h_combo, dpi = 300)
+ggsave("./output/01_descriptives/figures/plot4_arterial_line_combo.jpg",
+       plot4_al, width = w_combo, height = h_combo, dpi = figure_dpi, bg = "white")
 
 # ---------- PLOT 5: ASA ----------
 plot_overall_asa_by_group <- function(df, group_var, title) {
@@ -593,13 +739,15 @@ plot_overall_asa_by_group <- function(df, group_var, title) {
     scale_x_continuous(expand = expansion(mult = c(0, 0.02)))
 }
 
-p5_left <- plot_overall_asa_by_group(data_for_plots, "variable",   "ASA by variable")
+p5_left <- plot_overall_asa_by_group(data_for_plots, "variable",   "ASA by variable") +
+  labs(x = "Percent of model responses")
 p5_tr   <- plot_overall_asa_by_group(data_for_plots, "surgery_id", "ASA by surgery")
-p5_br   <- plot_overall_asa_by_group(data_for_plots, "sex",        "ASA by sex")
+p5_br   <- plot_overall_asa_by_group(data_for_plots, "sex",        "ASA by sex") +
+  labs(x = "Percent of model responses")
 plot5_asa <- build_two_col_composite(p5_left, p5_tr, p5_br,
                                      n_surgeries, n_sex)
-ggsave("./output/01_descriptives/figures/plot5_asa_combo.png",
-       plot5_asa, width = w_combo, height = h_combo, dpi = 300)
+ggsave("./output/01_descriptives/figures/plot5_asa_combo.jpg",
+       plot5_asa, width = w_combo, height = h_combo, dpi = figure_dpi, bg = "white")
 
 
 # 9. SAVE PREPARED DATASET

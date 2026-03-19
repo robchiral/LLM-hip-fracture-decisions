@@ -1,6 +1,9 @@
 # Script 8: Model Comparisons
 # Purpose: Compare different LLM models on hip fracture treatment recommendations
 
+# Set working directory
+setwd("/Users/robertchen/Documents/GitHub/LLM_hip/analysis")
+
 # Load required libraries
 library(tidyverse)
 library(lme4)
@@ -9,6 +12,8 @@ library(emmeans)
 library(irr)        # for kappa statistics
 library(metafor)    # for meta-analytic tests
 library(patchwork)  # for combining plots
+
+figure_dpi <- 600
 
 # Label formatting functions
 format_label <- function(x) {
@@ -139,10 +144,7 @@ p_variability <- replicate_var_df %>%
   labs(x = NULL, y = "Percent agreement",
        title = "A. Model sampling variability")
 
-ggsave(file.path(output_dir, "figures", "replicate_variability_violinplot.png"),
-       p_variability, width = 10, height = 6, dpi = 300)
-
-cat("Variability violin plot saved.\n")
+# p_variability is retained for the combined figure below.
 
 # ==============================================================================
 # TABLE 1: OUTCOME-VARIABLE COMBINATIONS WITH LOWEST AGREEMENT
@@ -243,7 +245,7 @@ p_strength <- strength_df %>%
             vjust = -0.3, size = 3.5) +
   facet_wrap(~ outcome) +
   scale_fill_brewer(palette = "Set2") +
-  scale_y_continuous(expand = expansion(mult = c(0, 0.05))) +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.12))) +
   theme_minimal() +
   theme(legend.position = "none",
         strip.text = element_text(size = 11),
@@ -254,17 +256,17 @@ p_strength <- strength_df %>%
   labs(x = NULL, y = "Percent strong recommendations",
        title = "B. Model usage of 'strong' recommendations")
 
-ggsave(file.path(output_dir, "figures", "recommendation_strength_barplot.png"),
-       p_strength, width = 10, height = 6, dpi = 300)
+# p_strength is retained for the combined figure below.
 
-cat("Recommendation strength barplot saved.\n")
+# ==============================================================================
+# COMBINED FIGURE
+# ==============================================================================
 
-# Create combined plot with violinplot on top and barplot on bottom
-# Add spacing between top and bottom panels
+# Create combined plot with both panels
 p_combined <- p_variability / plot_spacer() / p_strength +
   plot_layout(heights = c(1, 0.05, 1))
 
-ggsave(file.path(output_dir, "figures", "model_comparison_combined.png"),
-       p_combined, width = 10, height = 12, dpi = 300)
+ggsave(file.path(output_dir, "figures", "model_comparison_combined.jpg"),
+       p_combined, width = 10, height = 8, dpi = figure_dpi, bg = "white")
 
 cat("Combined model comparison plot saved.\n")

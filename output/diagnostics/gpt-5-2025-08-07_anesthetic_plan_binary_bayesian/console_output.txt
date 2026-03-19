@@ -1,0 +1,180 @@
+
+=======================================================================
+Fitting model for: gpt-5-2025-08-07 - anesthetic_plan_binary 
+Event level: neuraxial 
+Output directory: output/diagnostics/gpt-5-2025-08-07_anesthetic_plan_binary_bayesian 
+=======================================================================
+
+Sample size: 10800 
+
+Outcome distribution:
+
+  general neuraxial 
+     1418      9382 
+
+Outcome proportions:
+
+  general neuraxial 
+    0.131     0.869 
+
+--- Fitting penalized logistic regression (bayesglm) ---
+Formula: anesthetic_plan_binary ~ variable + surgery_id + sex 
+Prior: Cauchy (Student's t, df=1) - Gelman et al. 2008
+  Intercept: scale=10, df=1
+  Coefficients: scale=2.5, df=1
+
+Model fitting completed.
+
+=======================================================================
+CONVERGENCE DIAGNOSTICS
+=======================================================================
+
+Converged: TRUE 
+Convergence code: 0 (0 = converged)
+Iterations used: 18 
+
+--- Model Summary ---
+
+Call:
+bayesglm(formula = formula_binary, family = binomial(link = "logit"), 
+    data = model_data, prior.scale = 2.5, prior.df = 1, prior.scale.for.intercept = 10, 
+    prior.df.for.intercept = 1, maxit = 100)
+
+Coefficients:
+                                 Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                      -0.91825    0.15089  -6.086 1.16e-09 ***
+variablestent                    -7.23897    1.97425  -3.667 0.000246 ***
+variableobesity                   8.75480    2.08665   4.196 2.72e-05 ***
+variablelumbar_fusion             1.74339    0.12854  13.563  < 2e-16 ***
+variabledelirium                  8.75480    2.08665   4.196 2.72e-05 ***
+variablecopd                      8.75480    2.08665   4.196 2.72e-05 ***
+variableaortic_stenosis           1.05364    0.12169   8.658  < 2e-16 ***
+variableunhoused                  8.75480    2.08665   4.196 2.72e-05 ***
+variableundocumented              8.75480    2.08665   4.196 2.72e-05 ***
+variableivdu                      8.75480    2.08665   4.196 2.72e-05 ***
+variablewhite                     8.75480    2.08665   4.196 2.72e-05 ***
+variablepacific_islander          8.75480    2.08665   4.196 2.72e-05 ***
+variablenative_american           8.75480    2.08665   4.196 2.72e-05 ***
+variablemiddle_eastern            8.75480    2.08665   4.196 2.72e-05 ***
+variablehispanic                  8.75480    2.08665   4.196 2.72e-05 ***
+variableblack                     8.75480    2.08665   4.196 2.72e-05 ***
+variableasian                     8.75480    2.08665   4.196 2.72e-05 ***
+variablecontrol                   8.75480    2.08665   4.196 2.72e-05 ***
+surgery_idhemiarthroplasty        0.46475    0.17358   2.677 0.007419 ** 
+surgery_idlong_cephalomedullary  -0.24214    0.17133  -1.413 0.157575    
+surgery_idshort_cephalomedullary  0.21957    0.17189   1.277 0.201458    
+surgery_idsliding_hip_screw       0.80533    0.17765   4.533 5.81e-06 ***
+surgery_idpercutaneous_screws    -0.18267    0.17121  -1.067 0.285991    
+sexfemale                         0.04095    0.10119   0.405 0.685682    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 8399.0  on 10799  degrees of freedom
+Residual deviance: 2227.2  on 10776  degrees of freedom
+AIC: 2275.2
+
+Number of Fisher Scoring iterations: 18
+
+
+=======================================================================
+OVERDISPERSION DIAGNOSTICS
+=======================================================================
+
+# Overdispersion test
+
+ dispersion ratio = 0.992
+          p-value = 0.664
+
+
+=======================================================================
+DHARMa RESIDUAL DIAGNOSTICS
+=======================================================================
+
+Generating simulated datasets for DHARMa...
+Using event level: neuraxial for outcome: anesthetic_plan_binary 
+
+Creating DHARMa object from numeric simulations...
+
+--- Uniformity Test ---
+
+	Asymptotic one-sample Kolmogorov-Smirnov test
+
+data:  simulationOutput$scaledResiduals
+D = 0.0092582, p-value = 0.3128
+alternative hypothesis: two-sided
+
+
+--- Dispersion Test ---
+
+	DHARMa nonparametric dispersion test via sd of residuals fitted vs.
+	simulated
+
+data:  simulationOutput
+dispersion = 0.99033, p-value = 0.586
+alternative hypothesis: two.sided
+
+
+--- Outlier Test ---
+
+	DHARMa outlier test based on exact binomial test with approximate
+	expectations
+
+data:  sim_resid
+outliers at both margin(s) = 19, observations = 10800, p-value = 0.6664
+alternative hypothesis: true probability of success is not equal to 0.001998002
+95 percent confidence interval:
+ 0.001059511 0.002745944
+sample estimates:
+frequency of outliers (expected: 0.001998001998002 ) 
+                                         0.001759259 
+
+
+=======================================================================
+VARIANCE INFLATION FACTORS (VIF)
+=======================================================================
+
+               GVIF Df GVIF^(1/(2*Df))
+variable   1.014316 17        1.000418
+surgery_id 1.014281  5        1.001419
+sex        1.000050  1        1.000025
+
+Interpretation:
+  - For numeric predictors: VIF > 10 suggests multicollinearity
+  - For factors: Examine GVIF^(1/(2*Df)) (rightmost column)
+    Values > 2-3 suggest multicollinearity
+
+=======================================================================
+PLUG-IN PREDICTIVE CHECK
+=======================================================================
+
+Performing plug-in predictive check (event rate)...
+Saved: output/diagnostics/gpt-5-2025-08-07_anesthetic_plan_binary_bayesian/predictive_check.png 
+
+=======================================================================
+GENERATING DIAGNOSTIC PLOTS
+=======================================================================
+Saved: output/diagnostics/gpt-5-2025-08-07_anesthetic_plan_binary_bayesian/dharma_diagnostics.png 
+
+=======================================================================
+CREATING DIAGNOSTIC SUMMARY TABLE
+=======================================================================
+      Model_Type            Model                Outcome Event_Level     N
+1 bayesglm (MAP) gpt-5-2025-08-07 anesthetic_plan_binary   neuraxial 10800
+  Converged Convergence_code Iterations Boundary_fit Overdispersion_ratio
+1      TRUE                0         18        FALSE            0.9917465
+  Overdispersion_p DHARMa_uniformity_p DHARMa_dispersion_p DHARMa_outliers_p
+1            0.664           0.3128206               0.586         0.6663629
+
+Saved: output/diagnostics/gpt-5-2025-08-07_anesthetic_plan_binary_bayesian/diagnostics_summary.csv 
+
+=======================================================================
+SAVING MODEL AND RESULTS
+=======================================================================
+Saved model: models/gpt-5-2025-08-07_anesthetic_plan_binary_binary_bayesian_glm.rds 
+Saved results: output/diagnostics/gpt-5-2025-08-07_anesthetic_plan_binary_bayesian/model_results.rds 
+
+=======================================================================
+ITERATION COMPLETE: gpt-5-2025-08-07 - anesthetic_plan_binary 
+=======================================================================

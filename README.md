@@ -19,6 +19,7 @@ The analysis is performed by running the R scripts in the `R/` directory in the 
 4.  `06_conditional_outcomes.R`
 5.  `07_ga_preference_check.R`
 6.  `08_model_comparisons.R`
+7.  `09_commercial.R`
 
 For the topic analysis, run the Python scripts in the `topics/` directory first before running `05_topic_prevalence_heatmap.R` in the `R/` directory.
 

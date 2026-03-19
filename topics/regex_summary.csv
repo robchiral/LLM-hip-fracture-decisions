@@ -1,131 +1,141 @@
 model,plan,topic,count,total_applicable,prevalence,prevalence_pct,note
-deepseek,General,age,151,2153,0.07013469577333953,7.013469577333953,
-deepseek,Neuraxial,age,7388,8647,0.8544003700705447,85.44003700705447,
-gemini-2.5-flash-preview-09-2025,General,age,58,2576,0.02251552795031056,2.251552795031056,
-gemini-2.5-flash-preview-09-2025,Neuraxial,age,4658,8224,0.5663910505836576,56.63910505836576,
-gpt-5-2025-08-07,General,age,66,1418,0.0465444287729196,4.65444287729196,
-gpt-5-2025-08-07,Neuraxial,age,4879,9382,0.5200383713493925,52.003837134939246,
-gpt-5-mini-2025-08-07,General,age,88,1766,0.04983012457531144,4.983012457531144,
-gpt-5-mini-2025-08-07,Neuraxial,age,7062,9034,0.781713526676998,78.17135266769981,
-gpt-5-nano-2025-08-07,General,age,227,1235,0.18380566801619433,18.380566801619434,
-gpt-5-nano-2025-08-07,Neuraxial,age,6733,9565,0.7039205436487193,70.39205436487192,
-deepseek,General,airway_control,790,2153,0.36692986530422667,36.692986530422665,
-deepseek,Neuraxial,airway_control,0,8647,0.0,0.0,
-gemini-2.5-flash-preview-09-2025,General,airway_control,318,2576,0.1234472049689441,12.344720496894409,
-gemini-2.5-flash-preview-09-2025,Neuraxial,airway_control,0,8224,0.0,0.0,
-gpt-5-2025-08-07,General,airway_control,769,1418,0.5423131170662906,54.23131170662906,
-gpt-5-2025-08-07,Neuraxial,airway_control,0,9382,0.0,0.0,
-gpt-5-mini-2025-08-07,General,airway_control,1159,1766,0.6562853907134768,65.62853907134767,
-gpt-5-mini-2025-08-07,Neuraxial,airway_control,0,9034,0.0,0.0,
-gpt-5-nano-2025-08-07,General,airway_control,506,1235,0.4097165991902834,40.97165991902834,
-gpt-5-nano-2025-08-07,Neuraxial,airway_control,2,9565,0.00020909566126502875,0.020909566126502875,
-deepseek,General,bleeding_risk,309,2153,0.14352066883418485,14.352066883418486,
-deepseek,Neuraxial,bleeding_risk,394,8647,0.045564935815889905,4.556493581588991,
-gemini-2.5-flash-preview-09-2025,General,bleeding_risk,851,2576,0.33035714285714285,33.035714285714285,
-gemini-2.5-flash-preview-09-2025,Neuraxial,bleeding_risk,443,8224,0.05386673151750973,5.386673151750973,
-gpt-5-2025-08-07,General,bleeding_risk,576,1418,0.40620592383638926,40.62059238363893,
-gpt-5-2025-08-07,Neuraxial,bleeding_risk,554,9382,0.05904924323172032,5.904924323172032,
-gpt-5-mini-2025-08-07,General,bleeding_risk,1040,1766,0.5889014722536806,58.89014722536806,
-gpt-5-mini-2025-08-07,Neuraxial,bleeding_risk,824,9034,0.09121098073942882,9.121098073942882,
-gpt-5-nano-2025-08-07,General,bleeding_risk,1012,1235,0.8194331983805668,81.94331983805668,
-gpt-5-nano-2025-08-07,Neuraxial,bleeding_risk,242,9565,0.02530057501306848,2.530057501306848,
-deepseek,General,delirium_prevention,0,2044,0.0,0.0,Excludes variable=delirium
-deepseek,Neuraxial,delirium_prevention,1090,8156,0.13364394310936734,13.364394310936733,Excludes variable=delirium
-gemini-2.5-flash-preview-09-2025,General,delirium_prevention,1,2362,0.0004233700254022015,0.04233700254022015,Excludes variable=delirium
-gemini-2.5-flash-preview-09-2025,Neuraxial,delirium_prevention,4558,7838,0.581525899464149,58.1525899464149,Excludes variable=delirium
-gpt-5-2025-08-07,General,delirium_prevention,0,1418,0.0,0.0,Excludes variable=delirium
-gpt-5-2025-08-07,Neuraxial,delirium_prevention,1486,8782,0.16920974721020268,16.92097472102027,Excludes variable=delirium
-gpt-5-mini-2025-08-07,General,delirium_prevention,0,1728,0.0,0.0,Excludes variable=delirium
-gpt-5-mini-2025-08-07,Neuraxial,delirium_prevention,544,8472,0.06421152030217187,6.421152030217186,Excludes variable=delirium
-gpt-5-nano-2025-08-07,General,delirium_prevention,0,1232,0.0,0.0,Excludes variable=delirium
-gpt-5-nano-2025-08-07,Neuraxial,delirium_prevention,943,8968,0.10515165031222123,10.515165031222123,Excludes variable=delirium
-deepseek,General,hemodynamics,542,2153,0.2517417556897353,25.174175568973528,
-deepseek,Neuraxial,hemodynamics,902,8647,0.1043136347866312,10.43136347866312,
-gemini-2.5-flash-preview-09-2025,General,hemodynamics,427,2576,0.16576086956521738,16.57608695652174,
-gemini-2.5-flash-preview-09-2025,Neuraxial,hemodynamics,904,8224,0.10992217898832685,10.992217898832685,
-gpt-5-2025-08-07,General,hemodynamics,661,1418,0.46614950634696756,46.614950634696754,
-gpt-5-2025-08-07,Neuraxial,hemodynamics,2841,9382,0.3028138989554466,30.28138989554466,
-gpt-5-mini-2025-08-07,General,hemodynamics,1077,1766,0.6098527746319365,60.985277463193654,
-gpt-5-mini-2025-08-07,Neuraxial,hemodynamics,5064,9034,0.5605490369714412,56.05490369714412,
-gpt-5-nano-2025-08-07,General,hemodynamics,729,1235,0.5902834008097166,59.02834008097167,
-gpt-5-nano-2025-08-07,Neuraxial,hemodynamics,5844,9565,0.610977522216414,61.0977522216414,
-deepseek,General,mobilization,0,2153,0.0,0.0,
-deepseek,Neuraxial,mobilization,19,8647,0.002197293859141899,0.2197293859141899,
-gemini-2.5-flash-preview-09-2025,General,mobilization,2,2576,0.0007763975155279503,0.07763975155279502,
-gemini-2.5-flash-preview-09-2025,Neuraxial,mobilization,137,8224,0.016658560311284046,1.6658560311284047,
-gpt-5-2025-08-07,General,mobilization,0,1418,0.0,0.0,
-gpt-5-2025-08-07,Neuraxial,mobilization,82,9382,0.008740140694947772,0.8740140694947771,
-gpt-5-mini-2025-08-07,General,mobilization,0,1766,0.0,0.0,
-gpt-5-mini-2025-08-07,Neuraxial,mobilization,4,9034,0.00044277175116227583,0.044277175116227585,
-gpt-5-nano-2025-08-07,General,mobilization,3,1235,0.0024291497975708503,0.24291497975708504,
-gpt-5-nano-2025-08-07,Neuraxial,mobilization,733,9565,0.07663355985363304,7.663355985363304,
-deepseek,General,opioid_use,2,2153,0.0009289363678588017,0.09289363678588017,
-deepseek,Neuraxial,opioid_use,736,8647,0.08511622528044409,8.511622528044409,
-gemini-2.5-flash-preview-09-2025,General,opioid_use,53,2576,0.020574534161490684,2.0574534161490683,
-gemini-2.5-flash-preview-09-2025,Neuraxial,opioid_use,174,8224,0.021157587548638133,2.1157587548638133,
-gpt-5-2025-08-07,General,opioid_use,141,1418,0.09943582510578279,9.94358251057828,
-gpt-5-2025-08-07,Neuraxial,opioid_use,2367,9382,0.25229162225538265,25.229162225538264,
-gpt-5-mini-2025-08-07,General,opioid_use,12,1766,0.006795016987542469,0.6795016987542469,
-gpt-5-mini-2025-08-07,Neuraxial,opioid_use,4794,9034,0.5306619437679876,53.06619437679876,
-gpt-5-nano-2025-08-07,General,opioid_use,4,1235,0.0032388663967611335,0.32388663967611336,
-gpt-5-nano-2025-08-07,Neuraxial,opioid_use,912,9565,0.09534762153685311,9.53476215368531,
-deepseek,General,postoperative_analgesia,18,2153,0.008360427310729215,0.8360427310729215,
-deepseek,Neuraxial,postoperative_analgesia,1968,8647,0.22759338498901352,22.759338498901354,
-gemini-2.5-flash-preview-09-2025,General,postoperative_analgesia,415,2576,0.1611024844720497,16.11024844720497,
-gemini-2.5-flash-preview-09-2025,Neuraxial,postoperative_analgesia,2227,8224,0.2707928015564202,27.07928015564202,
-gpt-5-2025-08-07,General,postoperative_analgesia,6,1418,0.004231311706629055,0.4231311706629055,
-gpt-5-2025-08-07,Neuraxial,postoperative_analgesia,310,9382,0.03304199531016841,3.304199531016841,
-gpt-5-mini-2025-08-07,General,postoperative_analgesia,11,1766,0.00622876557191393,0.622876557191393,
-gpt-5-mini-2025-08-07,Neuraxial,postoperative_analgesia,3084,9034,0.34137702014611465,34.13770201461146,
-gpt-5-nano-2025-08-07,General,postoperative_analgesia,5,1235,0.004048582995951417,0.4048582995951417,
-gpt-5-nano-2025-08-07,Neuraxial,postoperative_analgesia,1935,9565,0.20230005227391532,20.23000522739153,
-deepseek,General,race_ethnicity,0,2153,0.0,0.0,
-deepseek,Neuraxial,race_ethnicity,0,8647,0.0,0.0,
-gemini-2.5-flash-preview-09-2025,General,race_ethnicity,0,2576,0.0,0.0,
-gemini-2.5-flash-preview-09-2025,Neuraxial,race_ethnicity,0,8224,0.0,0.0,
-gpt-5-2025-08-07,General,race_ethnicity,0,1418,0.0,0.0,
-gpt-5-2025-08-07,Neuraxial,race_ethnicity,0,9382,0.0,0.0,
-gpt-5-mini-2025-08-07,General,race_ethnicity,0,1766,0.0,0.0,
-gpt-5-mini-2025-08-07,Neuraxial,race_ethnicity,0,9034,0.0,0.0,
-gpt-5-nano-2025-08-07,General,race_ethnicity,0,1235,0.0,0.0,
-gpt-5-nano-2025-08-07,Neuraxial,race_ethnicity,0,9565,0.0,0.0,
-deepseek,General,recovery_speed,0,2153,0.0,0.0,
-deepseek,Neuraxial,recovery_speed,5,8647,0.0005782352260899734,0.05782352260899734,
-gemini-2.5-flash-preview-09-2025,General,recovery_speed,2,2576,0.0007763975155279503,0.07763975155279502,
-gemini-2.5-flash-preview-09-2025,Neuraxial,recovery_speed,175,8224,0.021279182879377433,2.127918287937743,
-gpt-5-2025-08-07,General,recovery_speed,0,1418,0.0,0.0,
-gpt-5-2025-08-07,Neuraxial,recovery_speed,225,9382,0.023982093370283522,2.3982093370283524,
-gpt-5-mini-2025-08-07,General,recovery_speed,0,1766,0.0,0.0,
-gpt-5-mini-2025-08-07,Neuraxial,recovery_speed,27,9034,0.0029887093203453618,0.2988709320345362,
-gpt-5-nano-2025-08-07,General,recovery_speed,30,1235,0.024291497975708502,2.42914979757085,
-gpt-5-nano-2025-08-07,Neuraxial,recovery_speed,919,9565,0.0960794563512807,9.60794563512807,
-deepseek,General,sex,0,2153,0.0,0.0,
-deepseek,Neuraxial,sex,0,8647,0.0,0.0,
-gemini-2.5-flash-preview-09-2025,General,sex,0,2576,0.0,0.0,
-gemini-2.5-flash-preview-09-2025,Neuraxial,sex,1,8224,0.00012159533073929961,0.012159533073929961,
-gpt-5-2025-08-07,General,sex,0,1418,0.0,0.0,
-gpt-5-2025-08-07,Neuraxial,sex,0,9382,0.0,0.0,
-gpt-5-mini-2025-08-07,General,sex,0,1766,0.0,0.0,
-gpt-5-mini-2025-08-07,Neuraxial,sex,0,9034,0.0,0.0,
-gpt-5-nano-2025-08-07,General,sex,0,1235,0.0,0.0,
-gpt-5-nano-2025-08-07,Neuraxial,sex,1,9565,0.00010454783063251438,0.010454783063251438,
-deepseek,General,social_factors,28,2153,0.013005109150023224,1.3005109150023224,
-deepseek,Neuraxial,social_factors,11,8647,0.0012721174973979415,0.12721174973979416,
-gemini-2.5-flash-preview-09-2025,General,social_factors,1,2576,0.00038819875776397513,0.03881987577639751,
-gemini-2.5-flash-preview-09-2025,Neuraxial,social_factors,0,8224,0.0,0.0,
-gpt-5-2025-08-07,General,social_factors,0,1418,0.0,0.0,
-gpt-5-2025-08-07,Neuraxial,social_factors,0,9382,0.0,0.0,
-gpt-5-mini-2025-08-07,General,social_factors,0,1766,0.0,0.0,
-gpt-5-mini-2025-08-07,Neuraxial,social_factors,0,9034,0.0,0.0,
-gpt-5-nano-2025-08-07,General,social_factors,0,1235,0.0,0.0,
-gpt-5-nano-2025-08-07,Neuraxial,social_factors,0,9565,0.0,0.0,
-deepseek,General,thrombosis_risk,0,2153,0.0,0.0,
-deepseek,Neuraxial,thrombosis_risk,3428,8647,0.3964380710072858,39.64380710072858,
-gemini-2.5-flash-preview-09-2025,General,thrombosis_risk,18,2576,0.006987577639751553,0.6987577639751553,
-gemini-2.5-flash-preview-09-2025,Neuraxial,thrombosis_risk,3060,8224,0.3720817120622568,37.208171206225686,
-gpt-5-2025-08-07,General,thrombosis_risk,0,1418,0.0,0.0,
-gpt-5-2025-08-07,Neuraxial,thrombosis_risk,1220,9382,0.13003623960775954,13.003623960775954,
-gpt-5-mini-2025-08-07,General,thrombosis_risk,4,1766,0.0022650056625141564,0.22650056625141565,
-gpt-5-mini-2025-08-07,Neuraxial,thrombosis_risk,125,9034,0.01383661722382112,1.383661722382112,
-gpt-5-nano-2025-08-07,General,thrombosis_risk,6,1235,0.004858299595141701,0.4858299595141701,
-gpt-5-nano-2025-08-07,Neuraxial,thrombosis_risk,358,9565,0.03742812336644015,3.742812336644015,
+deepseek,General,age,151,2153,0.07013469577333953,7.013469577333953,Excludes variable=preference_ga
+deepseek,Neuraxial,age,7388,8647,0.8544003700705447,85.44003700705447,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,General,age,58,2576,0.02251552795031056,2.251552795031056,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,Neuraxial,age,4658,8224,0.5663910505836576,56.63910505836576,Excludes variable=preference_ga
+gpt-5-2025-08-07,General,age,66,1418,0.0465444287729196,4.65444287729196,Excludes variable=preference_ga
+gpt-5-2025-08-07,Neuraxial,age,4879,9382,0.5200383713493925,52.003837134939246,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,General,age,88,1766,0.04983012457531144,4.983012457531144,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,Neuraxial,age,7062,9034,0.781713526676998,78.17135266769981,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,General,age,227,1235,0.18380566801619433,18.380566801619434,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,Neuraxial,age,6733,9565,0.7039205436487193,70.39205436487192,Excludes variable=preference_ga
+deepseek,General,airway_control,790,2153,0.36692986530422667,36.692986530422665,Excludes variable=preference_ga
+deepseek,Neuraxial,airway_control,0,8647,0.0,0.0,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,General,airway_control,318,2576,0.1234472049689441,12.344720496894409,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,Neuraxial,airway_control,0,8224,0.0,0.0,Excludes variable=preference_ga
+gpt-5-2025-08-07,General,airway_control,769,1418,0.5423131170662906,54.23131170662906,Excludes variable=preference_ga
+gpt-5-2025-08-07,Neuraxial,airway_control,0,9382,0.0,0.0,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,General,airway_control,1159,1766,0.6562853907134768,65.62853907134767,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,Neuraxial,airway_control,0,9034,0.0,0.0,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,General,airway_control,506,1235,0.4097165991902834,40.97165991902834,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,Neuraxial,airway_control,2,9565,0.00020909566126502875,0.020909566126502875,Excludes variable=preference_ga
+deepseek,General,bleeding_risk,309,2153,0.14352066883418485,14.352066883418486,Excludes variable=preference_ga
+deepseek,Neuraxial,bleeding_risk,394,8647,0.045564935815889905,4.556493581588991,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,General,bleeding_risk,851,2576,0.33035714285714285,33.035714285714285,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,Neuraxial,bleeding_risk,443,8224,0.05386673151750973,5.386673151750973,Excludes variable=preference_ga
+gpt-5-2025-08-07,General,bleeding_risk,576,1418,0.40620592383638926,40.62059238363893,Excludes variable=preference_ga
+gpt-5-2025-08-07,Neuraxial,bleeding_risk,554,9382,0.05904924323172032,5.904924323172032,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,General,bleeding_risk,1040,1766,0.5889014722536806,58.89014722536806,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,Neuraxial,bleeding_risk,824,9034,0.09121098073942882,9.121098073942882,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,General,bleeding_risk,1012,1235,0.8194331983805668,81.94331983805668,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,Neuraxial,bleeding_risk,242,9565,0.02530057501306848,2.530057501306848,Excludes variable=preference_ga
+deepseek,General,delirium_prevention,0,2044,0.0,0.0,"Excludes variable=delirium, preference_ga"
+deepseek,Neuraxial,delirium_prevention,1090,8156,0.13364394310936734,13.364394310936733,"Excludes variable=delirium, preference_ga"
+gemini-2.5-flash-preview-09-2025,General,delirium_prevention,1,2362,0.0004233700254022015,0.04233700254022015,"Excludes variable=delirium, preference_ga"
+gemini-2.5-flash-preview-09-2025,Neuraxial,delirium_prevention,4558,7838,0.581525899464149,58.1525899464149,"Excludes variable=delirium, preference_ga"
+gpt-5-2025-08-07,General,delirium_prevention,0,1418,0.0,0.0,"Excludes variable=delirium, preference_ga"
+gpt-5-2025-08-07,Neuraxial,delirium_prevention,1486,8782,0.16920974721020268,16.92097472102027,"Excludes variable=delirium, preference_ga"
+gpt-5-mini-2025-08-07,General,delirium_prevention,0,1728,0.0,0.0,"Excludes variable=delirium, preference_ga"
+gpt-5-mini-2025-08-07,Neuraxial,delirium_prevention,544,8472,0.06421152030217187,6.421152030217186,"Excludes variable=delirium, preference_ga"
+gpt-5-nano-2025-08-07,General,delirium_prevention,0,1232,0.0,0.0,"Excludes variable=delirium, preference_ga"
+gpt-5-nano-2025-08-07,Neuraxial,delirium_prevention,943,8968,0.10515165031222123,10.515165031222123,"Excludes variable=delirium, preference_ga"
+deepseek,General,hemodynamics,542,2153,0.2517417556897353,25.174175568973528,Excludes variable=preference_ga
+deepseek,Neuraxial,hemodynamics,902,8647,0.1043136347866312,10.43136347866312,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,General,hemodynamics,427,2576,0.16576086956521738,16.57608695652174,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,Neuraxial,hemodynamics,904,8224,0.10992217898832685,10.992217898832685,Excludes variable=preference_ga
+gpt-5-2025-08-07,General,hemodynamics,661,1418,0.46614950634696756,46.614950634696754,Excludes variable=preference_ga
+gpt-5-2025-08-07,Neuraxial,hemodynamics,2841,9382,0.3028138989554466,30.28138989554466,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,General,hemodynamics,1077,1766,0.6098527746319365,60.985277463193654,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,Neuraxial,hemodynamics,5064,9034,0.5605490369714412,56.05490369714412,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,General,hemodynamics,729,1235,0.5902834008097166,59.02834008097167,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,Neuraxial,hemodynamics,5844,9565,0.610977522216414,61.0977522216414,Excludes variable=preference_ga
+deepseek,General,mobilization,0,2153,0.0,0.0,Excludes variable=preference_ga
+deepseek,Neuraxial,mobilization,19,8647,0.002197293859141899,0.2197293859141899,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,General,mobilization,2,2576,0.0007763975155279503,0.07763975155279502,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,Neuraxial,mobilization,137,8224,0.016658560311284046,1.6658560311284047,Excludes variable=preference_ga
+gpt-5-2025-08-07,General,mobilization,0,1418,0.0,0.0,Excludes variable=preference_ga
+gpt-5-2025-08-07,Neuraxial,mobilization,82,9382,0.008740140694947772,0.8740140694947771,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,General,mobilization,0,1766,0.0,0.0,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,Neuraxial,mobilization,4,9034,0.00044277175116227583,0.044277175116227585,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,General,mobilization,3,1235,0.0024291497975708503,0.24291497975708504,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,Neuraxial,mobilization,733,9565,0.07663355985363304,7.663355985363304,Excludes variable=preference_ga
+deepseek,General,mortality,0,2153,0.0,0.0,Excludes variable=preference_ga
+deepseek,Neuraxial,mortality,450,8647,0.052041170348097604,5.2041170348097605,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,General,mortality,0,2576,0.0,0.0,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,Neuraxial,mortality,1411,8224,0.17157101167315175,17.157101167315176,Excludes variable=preference_ga
+gpt-5-2025-08-07,General,mortality,0,1418,0.0,0.0,Excludes variable=preference_ga
+gpt-5-2025-08-07,Neuraxial,mortality,51,9382,0.005435941163930932,0.5435941163930932,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,General,mortality,0,1766,0.0,0.0,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,Neuraxial,mortality,2,9034,0.00022138587558113792,0.022138587558113793,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,General,mortality,0,1235,0.0,0.0,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,Neuraxial,mortality,4,9565,0.0004181913225300575,0.04181913225300575,Excludes variable=preference_ga
+deepseek,General,opioid_use,2,2153,0.0009289363678588017,0.09289363678588017,Excludes variable=preference_ga
+deepseek,Neuraxial,opioid_use,736,8647,0.08511622528044409,8.511622528044409,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,General,opioid_use,53,2576,0.020574534161490684,2.0574534161490683,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,Neuraxial,opioid_use,174,8224,0.021157587548638133,2.1157587548638133,Excludes variable=preference_ga
+gpt-5-2025-08-07,General,opioid_use,141,1418,0.09943582510578279,9.94358251057828,Excludes variable=preference_ga
+gpt-5-2025-08-07,Neuraxial,opioid_use,2367,9382,0.25229162225538265,25.229162225538264,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,General,opioid_use,12,1766,0.006795016987542469,0.6795016987542469,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,Neuraxial,opioid_use,4794,9034,0.5306619437679876,53.06619437679876,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,General,opioid_use,4,1235,0.0032388663967611335,0.32388663967611336,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,Neuraxial,opioid_use,912,9565,0.09534762153685311,9.53476215368531,Excludes variable=preference_ga
+deepseek,General,postoperative_analgesia,18,2153,0.008360427310729215,0.8360427310729215,Excludes variable=preference_ga
+deepseek,Neuraxial,postoperative_analgesia,1968,8647,0.22759338498901352,22.759338498901354,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,General,postoperative_analgesia,415,2576,0.1611024844720497,16.11024844720497,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,Neuraxial,postoperative_analgesia,2227,8224,0.2707928015564202,27.07928015564202,Excludes variable=preference_ga
+gpt-5-2025-08-07,General,postoperative_analgesia,6,1418,0.004231311706629055,0.4231311706629055,Excludes variable=preference_ga
+gpt-5-2025-08-07,Neuraxial,postoperative_analgesia,310,9382,0.03304199531016841,3.304199531016841,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,General,postoperative_analgesia,11,1766,0.00622876557191393,0.622876557191393,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,Neuraxial,postoperative_analgesia,3084,9034,0.34137702014611465,34.13770201461146,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,General,postoperative_analgesia,5,1235,0.004048582995951417,0.4048582995951417,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,Neuraxial,postoperative_analgesia,1935,9565,0.20230005227391532,20.23000522739153,Excludes variable=preference_ga
+deepseek,General,race_ethnicity,0,2153,0.0,0.0,Excludes variable=preference_ga
+deepseek,Neuraxial,race_ethnicity,0,8647,0.0,0.0,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,General,race_ethnicity,0,2576,0.0,0.0,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,Neuraxial,race_ethnicity,0,8224,0.0,0.0,Excludes variable=preference_ga
+gpt-5-2025-08-07,General,race_ethnicity,0,1418,0.0,0.0,Excludes variable=preference_ga
+gpt-5-2025-08-07,Neuraxial,race_ethnicity,0,9382,0.0,0.0,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,General,race_ethnicity,0,1766,0.0,0.0,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,Neuraxial,race_ethnicity,0,9034,0.0,0.0,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,General,race_ethnicity,0,1235,0.0,0.0,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,Neuraxial,race_ethnicity,0,9565,0.0,0.0,Excludes variable=preference_ga
+deepseek,General,recovery_speed,0,2153,0.0,0.0,Excludes variable=preference_ga
+deepseek,Neuraxial,recovery_speed,5,8647,0.0005782352260899734,0.05782352260899734,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,General,recovery_speed,2,2576,0.0007763975155279503,0.07763975155279502,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,Neuraxial,recovery_speed,175,8224,0.021279182879377433,2.127918287937743,Excludes variable=preference_ga
+gpt-5-2025-08-07,General,recovery_speed,0,1418,0.0,0.0,Excludes variable=preference_ga
+gpt-5-2025-08-07,Neuraxial,recovery_speed,225,9382,0.023982093370283522,2.3982093370283524,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,General,recovery_speed,0,1766,0.0,0.0,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,Neuraxial,recovery_speed,27,9034,0.0029887093203453618,0.2988709320345362,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,General,recovery_speed,30,1235,0.024291497975708502,2.42914979757085,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,Neuraxial,recovery_speed,919,9565,0.0960794563512807,9.60794563512807,Excludes variable=preference_ga
+deepseek,General,sex,0,2153,0.0,0.0,Excludes variable=preference_ga
+deepseek,Neuraxial,sex,0,8647,0.0,0.0,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,General,sex,0,2576,0.0,0.0,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,Neuraxial,sex,1,8224,0.00012159533073929961,0.012159533073929961,Excludes variable=preference_ga
+gpt-5-2025-08-07,General,sex,0,1418,0.0,0.0,Excludes variable=preference_ga
+gpt-5-2025-08-07,Neuraxial,sex,0,9382,0.0,0.0,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,General,sex,0,1766,0.0,0.0,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,Neuraxial,sex,0,9034,0.0,0.0,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,General,sex,0,1235,0.0,0.0,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,Neuraxial,sex,1,9565,0.00010454783063251438,0.010454783063251438,Excludes variable=preference_ga
+deepseek,General,social_factors,28,2153,0.013005109150023224,1.3005109150023224,Excludes variable=preference_ga
+deepseek,Neuraxial,social_factors,11,8647,0.0012721174973979415,0.12721174973979416,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,General,social_factors,1,2576,0.00038819875776397513,0.03881987577639751,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,Neuraxial,social_factors,0,8224,0.0,0.0,Excludes variable=preference_ga
+gpt-5-2025-08-07,General,social_factors,0,1418,0.0,0.0,Excludes variable=preference_ga
+gpt-5-2025-08-07,Neuraxial,social_factors,0,9382,0.0,0.0,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,General,social_factors,0,1766,0.0,0.0,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,Neuraxial,social_factors,0,9034,0.0,0.0,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,General,social_factors,0,1235,0.0,0.0,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,Neuraxial,social_factors,0,9565,0.0,0.0,Excludes variable=preference_ga
+deepseek,General,thrombosis_risk,0,2153,0.0,0.0,Excludes variable=preference_ga
+deepseek,Neuraxial,thrombosis_risk,3428,8647,0.3964380710072858,39.64380710072858,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,General,thrombosis_risk,18,2576,0.006987577639751553,0.6987577639751553,Excludes variable=preference_ga
+gemini-2.5-flash-preview-09-2025,Neuraxial,thrombosis_risk,3060,8224,0.3720817120622568,37.208171206225686,Excludes variable=preference_ga
+gpt-5-2025-08-07,General,thrombosis_risk,0,1418,0.0,0.0,Excludes variable=preference_ga
+gpt-5-2025-08-07,Neuraxial,thrombosis_risk,1220,9382,0.13003623960775954,13.003623960775954,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,General,thrombosis_risk,4,1766,0.0022650056625141564,0.22650056625141565,Excludes variable=preference_ga
+gpt-5-mini-2025-08-07,Neuraxial,thrombosis_risk,125,9034,0.01383661722382112,1.383661722382112,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,General,thrombosis_risk,6,1235,0.004858299595141701,0.4858299595141701,Excludes variable=preference_ga
+gpt-5-nano-2025-08-07,Neuraxial,thrombosis_risk,358,9565,0.03742812336644015,3.742812336644015,Excludes variable=preference_ga
